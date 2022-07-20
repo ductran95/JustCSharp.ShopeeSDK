@@ -20,11 +20,11 @@ namespace JustCSharp.ShopeeSDK;
 
 public class ShopeeClient : IShopeeClient
 {
-    protected readonly IRestClient _httpClient;
+    protected readonly RestClient _httpClient;
     protected readonly ILogger _logger;
     protected readonly ShopeeOptions _shopeeOptions;
 
-    public ShopeeClient(IOptions<ShopeeOptions> shopeeOptions, IRestClient httpClient, ILogger<ShopeeClient> logger)
+    public ShopeeClient(IOptions<ShopeeOptions> shopeeOptions, RestClient httpClient, ILogger<ShopeeClient> logger)
     {
         _httpClient = httpClient;
         _logger = logger;
@@ -34,7 +34,7 @@ public class ShopeeClient : IShopeeClient
     public T Execute<T>(IShopeeRequest<T> request) where T : IShopeeResponse
     {
         var restRequest = CreateRestRequest(request);
-        IRestResponse<T> response = null;
+        RestResponse<T> response = null;
 
         Stopwatch stopwatch = null;
         try
@@ -62,7 +62,7 @@ public class ShopeeClient : IShopeeClient
         where T : IShopeeResponse
     {
         var restRequest = await CreateRestRequestAsync(request, cancellationToken);
-        IRestResponse<T> response = null;
+        RestResponse<T> response = null;
 
         Stopwatch stopwatch = null;
         try
@@ -92,7 +92,7 @@ public class ShopeeClient : IShopeeClient
             HashAlgorithmEnum.SHA256).ToLower();
     }
 
-    protected T ProcessResponse<T>(IRestResponse<T> response)
+    protected T ProcessResponse<T>(RestResponse<T> response)
     {
         if (response.IsSuccessful) return response.Data;
 
@@ -103,18 +103,18 @@ public class ShopeeClient : IShopeeClient
             response.ErrorException);
     }
 
-    protected IRestRequest CreateRestRequest<T>(IShopeeRequest<T> request) where T : IShopeeResponse
+    protected RestRequest CreateRestRequest<T>(IShopeeRequest<T> request) where T : IShopeeResponse
     {
         return CreateRestRequest(request, _shopeeOptions);
     }
 
-    protected Task<IRestRequest> CreateRestRequestAsync<T>(IShopeeRequest<T> request,
+    protected Task<RestRequest> CreateRestRequestAsync<T>(IShopeeRequest<T> request,
         CancellationToken cancellationToken = default) where T : IShopeeResponse
     {
         return Task.FromResult(CreateRestRequest(request, _shopeeOptions));
     }
 
-    protected IRestRequest CreateRestRequest<T>(IShopeeRequest<T> request, ShopeeOptions shopeeOptions)
+    protected RestRequest CreateRestRequest<T>(IShopeeRequest<T> request, ShopeeOptions shopeeOptions)
         where T : IShopeeResponse
     {
         if (string.IsNullOrEmpty(request.Cookie)) throw new ShopeeUnauthorizedException("Cookies not set");
@@ -129,7 +129,7 @@ public class ShopeeClient : IShopeeClient
             url = $"{shopeeOptions.ApiUrl}/api/v{request.ApiVersion}/{request.ApiUrl}";
         else
             url = $"{shopeeOptions.ApiUrl}/api/{request.ApiUrl}";
-        var restRequest = new RestRequest(url, request.Method, DataFormat.Json);
+        var restRequest = new RestRequest(url, request.Method);
 
         var cookies = ParseCookieData(request.Cookie);
 
@@ -139,7 +139,8 @@ public class ShopeeClient : IShopeeClient
         restRequest.AddParameter(ShopeeParameters.ShopIdParameter, shopId, ParameterType.QueryString);
         restRequest.AddParameter(ShopeeParameters.ShopVersionParameter, request.ShopVersion, ParameterType.QueryString);
 
-        foreach (var cookieItem in cookies) restRequest.AddCookie(cookieItem.Key, cookieItem.Value);
+        var cookieHeader = string.Join("; ", cookies.Select(x => $"{x.Key}={x.Value}"));
+        restRequest.AddOrUpdateHeader("cookie", cookieHeader);
 
         if (request.BothQueryAndBody)
         {
@@ -150,16 +151,16 @@ public class ShopeeClient : IShopeeClient
         {
             switch (request.Method)
             {
-                case Method.GET:
+                case Method.Get:
                     request.SetRestRequestQueryData(restRequest);
                     break;
-                case Method.POST:
+                case Method.Post:
                     request.SetRestRequestJsonData(restRequest);
                     break;
-                case Method.PUT:
+                case Method.Put:
                     request.SetRestRequestJsonData(restRequest);
                     break;
-                case Method.DELETE:
+                case Method.Delete:
                     request.SetRestRequestQueryData(restRequest);
                     break;
             }

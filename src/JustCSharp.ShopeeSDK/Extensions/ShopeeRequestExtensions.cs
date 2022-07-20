@@ -11,7 +11,7 @@ namespace JustCSharp.ShopeeSDK.Extensions;
 
 public static class ShopeeRequestExtensions
 {
-    public static void SetRestRequestQueryData<T>(this IShopeeRequest<T> request, IRestRequest restRequest)
+    public static void SetRestRequestQueryData<T>(this IShopeeRequest<T> request, RestRequest restRequest)
         where T : IShopeeResponse
     {
         // get only not ignored properties
@@ -48,7 +48,7 @@ public static class ShopeeRequestExtensions
 
     public static void SetRestRequestJsonData<T>(
         this IShopeeRequest<T> request,
-        IRestRequest restRequest)
+        RestRequest restRequest)
         where T : IShopeeResponse
     {
         restRequest.AddJsonBody(request);

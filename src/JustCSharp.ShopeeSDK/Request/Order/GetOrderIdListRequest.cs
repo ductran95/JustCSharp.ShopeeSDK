@@ -9,7 +9,7 @@ public class GetOrderIdListRequest : ShopeeRequestBase<GetOrderIdListResponse>
 {
     public override string ApiUrl => "order/get_order_id_list";
 
-    public override Method Method => Method.GET;
+    public override Method Method => Method.Get;
 
     [JsonIgnore]
     [QueryPropertyName("page_number")]

@@ -9,7 +9,7 @@ public class GetPackageListRequest : ShopeeRequestBase<GetPackageListResponse>
 {
     public override string ApiUrl => "order/get_package_list";
 
-    public override Method Method => Method.GET;
+    public override Method Method => Method.Get;
 
     [JsonIgnore]
     [QueryPropertyName("page_number")]

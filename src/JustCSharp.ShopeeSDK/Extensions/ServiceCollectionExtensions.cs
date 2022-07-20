@@ -30,7 +30,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddShopeeSDKCore(this IServiceCollection services)
     {
         services.TryAddSingleton<IShopeeClient, ShopeeClient>();
-        services.TryAddSingleton<IRestClient, RestClient>();
+        services.TryAddSingleton<RestClient>();
 
         return services;
     }

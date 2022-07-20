@@ -9,7 +9,7 @@ public class GetOneOrderRequest : ShopeeRequestBase<GetOneOrderResponse>
 {
     public override string ApiUrl => "order/get_one_order";
 
-    public override Method Method => Method.GET;
+    public override Method Method => Method.Get;
 
     [JsonIgnore]
     [QueryPropertyName("order_id")]

@@ -11,7 +11,7 @@ public class GetOrderListByOrderIdsRequest : ShopeeRequestBase<GetOrderListByOrd
 {
     public override string ApiUrl => "order/get_order_list_by_order_ids_multi_shop";
 
-    public override Method Method => Method.POST;
+    public override Method Method => Method.Post;
 
     [QueryIgnore]
     [JsonPropertyName("from_seller_data")]

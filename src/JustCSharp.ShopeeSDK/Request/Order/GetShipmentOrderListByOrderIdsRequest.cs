@@ -12,7 +12,7 @@ public class GetShipmentOrderListByOrderIdsRequest :
 {
     public override string ApiUrl => "order/get_shipment_order_list_by_order_ids_multi_shop";
 
-    public override Method Method => Method.POST;
+    public override Method Method => Method.Post;
 
     [QueryIgnore]
     [JsonPropertyName("orders")]

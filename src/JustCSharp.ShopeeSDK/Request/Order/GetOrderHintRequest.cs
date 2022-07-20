@@ -9,7 +9,7 @@ public class GetOrderHintRequest : ShopeeRequestBase<GetOrderHintResponse>
 {
     public override string ApiUrl => "order/get_order_hint";
 
-    public override Method Method => Method.GET;
+    public override Method Method => Method.Get;
 
     [JsonIgnore]
     [QueryPropertyName("keyword")]

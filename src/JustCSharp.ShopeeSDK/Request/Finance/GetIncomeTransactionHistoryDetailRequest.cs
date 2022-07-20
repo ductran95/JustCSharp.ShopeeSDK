@@ -9,7 +9,7 @@ public class GetIncomeTransactionHistoryDetailRequest : ShopeeRequestBase<GetInc
 {
     public override string ApiUrl => "finance/income_transaction_history_detail";
 
-    public override Method Method => Method.GET;
+    public override Method Method => Method.Get;
 
     [JsonIgnore]
     [QueryPropertyName("order_id")]

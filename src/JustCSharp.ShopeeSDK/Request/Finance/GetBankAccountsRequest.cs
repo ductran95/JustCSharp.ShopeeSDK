@@ -11,7 +11,7 @@ public class GetBankAccountsRequest : ShopeeRequestBase<GetBankAccountsResponse>
 
     public override string ApiUrl => "finance/get_bank_accounts";
 
-    public override Method Method => Method.POST;
+    public override Method Method => Method.Post;
 
     [JsonIgnore]
     [QueryPropertyName("page_number")]

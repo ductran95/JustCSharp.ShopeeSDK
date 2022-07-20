@@ -10,7 +10,7 @@ public class GetWalletTransactionsRequest : ShopeeRequestBase<GetWalletTransacti
 {
     public override string ApiUrl => "finance/get_wallet_transactions";
 
-    public override Method Method => Method.GET;
+    public override Method Method => Method.Get;
 
     [JsonIgnore]
     [QueryPropertyName("wallet_type")]
