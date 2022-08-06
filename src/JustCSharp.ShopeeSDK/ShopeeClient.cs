@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net;
@@ -15,20 +14,21 @@ using JustCSharp.Utility.Helpers;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using RestSharp;
+using RestSharp.Serializers.Json;
 
 namespace JustCSharp.ShopeeSDK;
 
-public class ShopeeClient : IShopeeClient
+public class ShopeeClient : IShopeeClient, IDisposable
 {
     protected readonly RestClient _httpClient;
     protected readonly ILogger _logger;
-    protected readonly ShopeeOptions _shopeeOptions;
+    protected readonly ShopeeSDKOptions _shopeeSdkOptions;
 
-    public ShopeeClient(IOptions<ShopeeOptions> shopeeOptions, RestClient httpClient, ILogger<ShopeeClient> logger)
+    public ShopeeClient(IOptions<ShopeeSDKOptions> shopeeOptions, ILogger<ShopeeClient> logger)
     {
-        _httpClient = httpClient;
+        _httpClient = new RestClient(new RestClientOptions()).UseSystemTextJson();
         _logger = logger;
-        _shopeeOptions = shopeeOptions.Value;
+        _shopeeSdkOptions = shopeeOptions.Value;
     }
 
     public T Execute<T>(IShopeeRequest<T> request) where T : IShopeeResponse
@@ -36,11 +36,8 @@ public class ShopeeClient : IShopeeClient
         var restRequest = CreateRestRequest(request);
         RestResponse<T> response = null;
 
-        Stopwatch stopwatch = null;
         try
         {
-            if (_logger.IsEnabled(LogLevel.Trace)) stopwatch = Stopwatch.StartNew();
-
             _logger.LogTrace("Start ExecuteAsync for {requestType}", request.GetType());
 
             response = _httpClient.Execute<T>(restRequest);
@@ -51,8 +48,7 @@ public class ShopeeClient : IShopeeClient
         }
         finally
         {
-            stopwatch?.Stop();
-            _logger.LogTrace("End ExecuteAsync, elapsed time {elapsedTime}", stopwatch?.Elapsed);
+            _logger.LogTrace("End ExecuteAsync");
         }
 
         return ProcessResponse(response);
@@ -64,11 +60,8 @@ public class ShopeeClient : IShopeeClient
         var restRequest = await CreateRestRequestAsync(request, cancellationToken);
         RestResponse<T> response = null;
 
-        Stopwatch stopwatch = null;
         try
         {
-            if (_logger.IsEnabled(LogLevel.Trace)) stopwatch = Stopwatch.StartNew();
-
             _logger.LogTrace("Start ExecuteAsync for {requestType}", request.GetType());
 
             response = await _httpClient.ExecuteAsync<T>(restRequest, cancellationToken);
@@ -79,8 +72,7 @@ public class ShopeeClient : IShopeeClient
         }
         finally
         {
-            stopwatch?.Stop();
-            _logger.LogTrace("End ExecuteAsync, elapsed time {elapsedTime}", stopwatch?.Elapsed);
+            _logger.LogTrace("End ExecuteAsync");
         }
 
         return ProcessResponse(response);
@@ -105,16 +97,16 @@ public class ShopeeClient : IShopeeClient
 
     protected RestRequest CreateRestRequest<T>(IShopeeRequest<T> request) where T : IShopeeResponse
     {
-        return CreateRestRequest(request, _shopeeOptions);
+        return CreateRestRequest(request, _shopeeSdkOptions);
     }
 
     protected Task<RestRequest> CreateRestRequestAsync<T>(IShopeeRequest<T> request,
         CancellationToken cancellationToken = default) where T : IShopeeResponse
     {
-        return Task.FromResult(CreateRestRequest(request, _shopeeOptions));
+        return Task.FromResult(CreateRestRequest(request, _shopeeSdkOptions));
     }
 
-    protected RestRequest CreateRestRequest<T>(IShopeeRequest<T> request, ShopeeOptions shopeeOptions)
+    protected RestRequest CreateRestRequest<T>(IShopeeRequest<T> request, ShopeeSDKOptions shopeeSdkOptions)
         where T : IShopeeResponse
     {
         if (string.IsNullOrEmpty(request.Cookie)) throw new ShopeeUnauthorizedException("Cookies not set");
@@ -122,13 +114,13 @@ public class ShopeeClient : IShopeeClient
         if (request.ShopVersion <= 0) throw new ShopeeUnauthorizedException("Shop Version not correct");
 
         if (request is IShopeeCustomRequest shopeeCustomRequest)
-            return shopeeCustomRequest.CreateRestRequest(shopeeOptions);
+            return shopeeCustomRequest.CreateRestRequest(shopeeSdkOptions);
 
         var url = string.Empty;
         if (request.ApiVersion.HasValue)
-            url = $"{shopeeOptions.ApiUrl}/api/v{request.ApiVersion}/{request.ApiUrl}";
+            url = $"{shopeeSdkOptions.ApiUrl}/api/v{request.ApiVersion}/{request.ApiUrl}";
         else
-            url = $"{shopeeOptions.ApiUrl}/api/{request.ApiUrl}";
+            url = $"{shopeeSdkOptions.ApiUrl}/api/{request.ApiUrl}";
         var restRequest = new RestRequest(url, request.Method);
 
         var cookies = ParseCookieData(request.Cookie);
@@ -189,5 +181,10 @@ public class ShopeeClient : IShopeeClient
         }
 
         return cookieDictionary;
+    }
+
+    public void Dispose()
+    {
+        _httpClient?.Dispose();
     }
 }

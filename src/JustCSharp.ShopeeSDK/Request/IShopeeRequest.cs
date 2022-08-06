@@ -34,5 +34,5 @@ public interface IShopeeRequest<T> where T : IShopeeResponse
 
 public interface IShopeeCustomRequest
 {
-    RestRequest CreateRestRequest(ShopeeOptions shopeeOptions);
+    RestRequest CreateRestRequest(ShopeeSDKOptions shopeeSdkOptions);
 }

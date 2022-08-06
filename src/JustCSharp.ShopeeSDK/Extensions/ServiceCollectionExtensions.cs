@@ -9,28 +9,27 @@ namespace JustCSharp.ShopeeSDK.Extensions;
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddShopeeSDK(this IServiceCollection services,
-        IConfigurationSection configurationSection)
+        IConfigurationSection configurationSection, ServiceLifetime serviceLifetime = ServiceLifetime.Singleton)
     {
-        services.AddShopeeSDKCore();
+        services.AddShopeeSDKCore(serviceLifetime);
 
-        services.Configure<ShopeeOptions>(configurationSection);
+        services.Configure<ShopeeSDKOptions>(configurationSection);
 
         return services;
     }
 
-    public static IServiceCollection AddShopeeSDK(this IServiceCollection services, Action<ShopeeOptions> setupAction)
+    public static IServiceCollection AddShopeeSDK(this IServiceCollection services, Action<ShopeeSDKOptions> setupAction, ServiceLifetime serviceLifetime = ServiceLifetime.Singleton)
     {
-        services.AddShopeeSDKCore();
+        services.AddShopeeSDKCore(serviceLifetime);
 
         services.Configure(setupAction);
 
         return services;
     }
 
-    public static IServiceCollection AddShopeeSDKCore(this IServiceCollection services)
+    internal static IServiceCollection AddShopeeSDKCore(this IServiceCollection services, ServiceLifetime serviceLifetime = ServiceLifetime.Singleton)
     {
-        services.TryAddSingleton<IShopeeClient, ShopeeClient>();
-        services.TryAddSingleton<RestClient>();
+        services.TryAdd(new ServiceDescriptor(typeof(IShopeeClient), typeof(ShopeeClient), serviceLifetime));
 
         return services;
     }
