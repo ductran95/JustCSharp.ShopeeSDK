@@ -11,24 +11,22 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddShopeeSDK(this IServiceCollection services,
         IConfigurationSection configurationSection, ServiceLifetime serviceLifetime = ServiceLifetime.Singleton)
     {
-        services.AddShopeeSDKCore(serviceLifetime);
-
-        services.Configure<ShopeeSDKOptions>(configurationSection);
+        services.AddShopeeSDK(configurationSection.Bind, serviceLifetime);
 
         return services;
     }
 
-    public static IServiceCollection AddShopeeSDK(this IServiceCollection services, Action<ShopeeSDKOptions> setupAction, ServiceLifetime serviceLifetime = ServiceLifetime.Singleton)
+    public static IServiceCollection AddShopeeSDK(this IServiceCollection services, Action<ShopeeSDKOptions> configure = null, ServiceLifetime serviceLifetime = ServiceLifetime.Singleton)
     {
-        services.AddShopeeSDKCore(serviceLifetime);
+        var options = new ShopeeSDKOptions();
 
-        services.Configure(setupAction);
+        if (configure != null)
+        {
+            configure.Invoke(options);
+        }
+        
+        services.TryAddSingleton(options);
 
-        return services;
-    }
-
-    internal static IServiceCollection AddShopeeSDKCore(this IServiceCollection services, ServiceLifetime serviceLifetime = ServiceLifetime.Singleton)
-    {
         services.TryAdd(new ServiceDescriptor(typeof(IShopeeClient), typeof(ShopeeClient), serviceLifetime));
 
         return services;

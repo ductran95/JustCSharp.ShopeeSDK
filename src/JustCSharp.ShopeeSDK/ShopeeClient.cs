@@ -24,11 +24,11 @@ public class ShopeeClient : IShopeeClient, IDisposable
     protected readonly ILogger _logger;
     protected readonly ShopeeSDKOptions _shopeeSdkOptions;
 
-    public ShopeeClient(IOptions<ShopeeSDKOptions> shopeeOptions, ILogger<ShopeeClient> logger)
+    public ShopeeClient(ShopeeSDKOptions shopeeSdkOptions, ILogger<ShopeeClient> logger)
     {
         _httpClient = new RestClient(new RestClientOptions()).UseSystemTextJson();
         _logger = logger;
-        _shopeeSdkOptions = shopeeOptions.Value;
+        _shopeeSdkOptions = shopeeSdkOptions;
     }
 
     public T Execute<T>(IShopeeRequest<T> request) where T : IShopeeResponse
