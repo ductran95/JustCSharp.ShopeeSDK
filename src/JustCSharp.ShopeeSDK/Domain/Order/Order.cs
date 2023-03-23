@@ -7,10 +7,10 @@ namespace JustCSharp.ShopeeSDK.Domain.Order;
 public class Order
 {
     [JsonPropertyName("shop_id")]
-    public int ShopId { get; set; }
+    public long ShopId { get; set; }
 
     [JsonPropertyName("user_id")]
-    public int UserId { get; set; }
+    public long UserId { get; set; }
 
     [JsonPropertyName("order_id")]
     public long OrderId { get; set; }
@@ -58,13 +58,13 @@ public class Order
     public int Status { get; set; }
 
     [JsonPropertyName("create_time")]
-    public int CreateTime { get; set; }
+    public long CreateTime { get; set; }
 
     [JsonPropertyName("delivery_time")]
-    public int DeliveryTime { get; set; }
+    public long DeliveryTime { get; set; }
 
     [JsonPropertyName("complete_time")]
-    public int CompleteTime { get; set; }
+    public long CompleteTime { get; set; }
 
     [JsonPropertyName("checkout_id")]
     public long CheckoutId { get; set; }
@@ -76,7 +76,7 @@ public class Order
     public int LogisticsStatus { get; set; }
 
     [JsonPropertyName("pickup_time")]
-    public int PickupTime { get; set; }
+    public long PickupTime { get; set; }
 
     [JsonPropertyName("shipping_confirm_time")]
     public int ShippingConfirmTime { get; set; }
@@ -91,7 +91,7 @@ public class Order
     public string ActualShippingFee { get; set; }
 
     [JsonPropertyName("add_on_deal_id")]
-    public int AddOnDealId { get; set; }
+    public long AddOnDealId { get; set; }
 
     [JsonPropertyName("arrange_pickup_by_date")]
     public int ArrangePickupByDate { get; set; }
@@ -100,7 +100,7 @@ public class Order
     public int AutoCancel3plAckDate { get; set; }
 
     [JsonPropertyName("auto_cancel_arrange_ship_date")]
-    public int AutoCancelArrangeShipDate { get; set; }
+    public long AutoCancelArrangeShipDate { get; set; }
 
     [JsonPropertyName("buyer_is_rated")]
     public int BuyerIsRated { get; set; }
@@ -118,7 +118,7 @@ public class Order
     public int CancelReasonExt { get; set; }
 
     [JsonPropertyName("cancel_userid")]
-    public int CancelUserid { get; set; }
+    public long CancelUserId { get; set; }
 
     [JsonPropertyName("card_txn_fee_info")]
     public CardTxnFeeInfo CardTxnFeeInfo { get; set; }
@@ -163,7 +163,7 @@ public class Order
     public int ItemCount { get; set; }
 
     [JsonPropertyName("logid")]
-    public int Logid { get; set; }
+    public long LogId { get; set; }
 
     [JsonPropertyName("logistics_channel")]
     public int LogisticsChannel { get; set; }
@@ -238,7 +238,7 @@ public class Order
     public string CancelBy { get; set; }
 
     [JsonPropertyName("cancel_time")]
-    public int CancelTime { get; set; }
+    public long CancelTime { get; set; }
 
     [JsonPropertyName("forder_id")]
     public string ForderId { get; set; }
@@ -307,10 +307,10 @@ public class Order
     public string Note { get; set; }
 
     [JsonPropertyName("note_mtime")]
-    public int NoteMtime { get; set; }
+    public long NoteMtime { get; set; }
 
     [JsonPropertyName("return_id")]
-    public int ReturnId { get; set; }
+    public long ReturnId { get; set; }
 
     [JsonPropertyName("express_channel")]
     public int ExpressChannel { get; set; }

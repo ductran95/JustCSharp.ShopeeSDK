@@ -14,7 +14,7 @@ public class ShopInfo
     public bool OfficialShop { get; set; }
 
     [JsonPropertyName("shop_id")]
-    public int ShopId { get; set; }
+    public long ShopId { get; set; }
 
     [JsonPropertyName("is_sip_primary")]
     public bool IsSipPrimary { get; set; }
