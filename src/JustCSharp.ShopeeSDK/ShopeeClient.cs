@@ -26,7 +26,7 @@ public class ShopeeClient : IShopeeClient, IDisposable
 
     public ShopeeClient(ShopeeSDKOptions shopeeSdkOptions, ILogger<ShopeeClient> logger)
     {
-        _httpClient = new RestClient(new RestClientOptions()).UseSystemTextJson();
+        _httpClient = new RestClient(new RestClientOptions());
         _logger = logger;
         _shopeeSdkOptions = shopeeSdkOptions;
     }
