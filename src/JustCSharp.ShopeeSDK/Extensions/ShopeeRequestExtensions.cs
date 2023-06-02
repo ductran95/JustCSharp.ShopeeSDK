@@ -5,6 +5,7 @@ using JustCSharp.Data.Constants;
 using JustCSharp.ShopeeSDK.Attributes;
 using JustCSharp.ShopeeSDK.Request;
 using JustCSharp.ShopeeSDK.Response;
+using JustCSharp.Utility.Helpers;
 using RestSharp;
 
 namespace JustCSharp.ShopeeSDK.Extensions;
@@ -15,7 +16,7 @@ public static class ShopeeRequestExtensions
         where T : IShopeeResponse
     {
         // get only not ignored properties
-        var properties = request.GetType().GetProperties(ReflectionConstants.SearchPropertyFlags)
+        var properties = request.GetType().GetProperties(ReflectionHelper.SearchPropertyFlags)
             .Where(x => x.GetCustomAttribute<QueryIgnoreAttribute>() == null).ToList();
 
         foreach (var property in properties)

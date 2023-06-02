@@ -10,6 +10,7 @@ using JustCSharp.ShopeeSDK.Exceptions;
 using JustCSharp.ShopeeSDK.Extensions;
 using JustCSharp.ShopeeSDK.Request;
 using JustCSharp.ShopeeSDK.Response;
+using JustCSharp.Utility;
 using JustCSharp.Utility.Helpers;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -80,8 +81,8 @@ public class ShopeeClient : IShopeeClient, IDisposable
 
     public string GetPasswordHash([NotNull] string password)
     {
-        return CryptoHelper.Hash(CryptoHelper.Hash(password, HashAlgorithmEnum.MD5).ToLower(),
-            HashAlgorithmEnum.SHA256).ToLower();
+        return CryptoHelper.Hash(CryptoHelper.Hash(password, HashAlgorithmType.MD5).ToLower(),
+            HashAlgorithmType.SHA256).ToLower();
     }
 
     protected T ProcessResponse<T>(RestResponse<T> response)
