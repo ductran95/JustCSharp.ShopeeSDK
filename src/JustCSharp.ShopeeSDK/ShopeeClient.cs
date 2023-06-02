@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using JustCSharp.Data.Enums;
 using JustCSharp.ShopeeSDK.Exceptions;
 using JustCSharp.ShopeeSDK.Extensions;
 using JustCSharp.ShopeeSDK.Request;
@@ -13,9 +12,7 @@ using JustCSharp.ShopeeSDK.Response;
 using JustCSharp.Utility;
 using JustCSharp.Utility.Helpers;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using RestSharp;
-using RestSharp.Serializers.Json;
 
 namespace JustCSharp.ShopeeSDK;
 
