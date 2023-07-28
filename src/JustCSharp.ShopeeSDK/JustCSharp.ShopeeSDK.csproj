@@ -3,7 +3,7 @@
     <TargetFrameworks>net6.0;netstandard2.1;net7.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="JustCSharp.Core" Version="2.11.0" />
+    <PackageReference Include="JustCSharp.Core" Version="2.13.0" />
     <PackageReference Include="RestSharp" Version="110.2.0" />
   </ItemGroup>
   
