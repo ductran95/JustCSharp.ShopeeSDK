@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        os: ['windows-2019', 'ubuntu-20.04']
+        os: ['windows-latest', 'ubuntu-latest']
     runs-on: ${{ matrix.os }}
 
     steps:
