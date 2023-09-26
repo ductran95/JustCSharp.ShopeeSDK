@@ -6,10 +6,10 @@ namespace JustCSharp.ShopeeSDK.Domain.Order;
 public class CompactOrderData
 {
     [JsonPropertyName("shop_id")]
-    public int ShopId { get; set; }
+    public long ShopId { get; set; }
 
     [JsonPropertyName("order_id")]
-    public object OrderId { get; set; }
+    public long OrderId { get; set; }
 
     [JsonPropertyName("order_sn")]
     public string OrderSn { get; set; }
@@ -135,7 +135,7 @@ public class CompactOrderData
     public int CheckoutChannelId { get; set; }
 
     [JsonPropertyName("cancellation_end_date")]
-    public object CancellationEndDate { get; set; }
+    public long? CancellationEndDate { get; set; }
 
     [JsonPropertyName("return_id")]
     public int ReturnId { get; set; }
@@ -290,10 +290,10 @@ public class CompactOrderData
     public class ItemModel
     {
         [JsonPropertyName("model_id")]
-        public object ModelId { get; set; }
+        public long? ModelId { get; set; }
 
         [JsonPropertyName("item_id")]
-        public object ItemId { get; set; }
+        public long? ItemId { get; set; }
 
         [JsonPropertyName("name")]
         public string Name { get; set; }
@@ -311,7 +311,7 @@ public class CompactOrderData
         public string PriceBeforeDiscount { get; set; }
 
         [JsonPropertyName("promotion_id")]
-        public object PromotionId { get; set; }
+        public long? PromotionId { get; set; }
 
         [JsonPropertyName("rebate_price")]
         public string RebatePrice { get; set; }
@@ -356,10 +356,10 @@ public class CompactOrderData
         public string ItemPrice { get; set; }
 
         [JsonPropertyName("item_id")]
-        public object ItemId { get; set; }
+        public long? ItemId { get; set; }
 
         [JsonPropertyName("model_id")]
-        public object ModelId { get; set; }
+        public long? ModelId { get; set; }
 
         [JsonPropertyName("line_item_id")]
         public string LineItemId { get; set; }
@@ -371,7 +371,7 @@ public class CompactOrderData
         public string PriceBeforeBundle { get; set; }
 
         [JsonPropertyName("snapshot_id")]
-        public object SnapshotId { get; set; }
+        public long? SnapshotId { get; set; }
 
         [JsonPropertyName("status")]
         public int Status { get; set; }
@@ -461,10 +461,10 @@ public class CompactOrderData
         public bool IsPreOrder { get; set; }
 
         [JsonPropertyName("item_id")]
-        public object ItemId { get; set; }
+        public long? ItemId { get; set; }
 
         [JsonPropertyName("model_id")]
-        public object ModelId { get; set; }
+        public long? ModelId { get; set; }
 
         [JsonPropertyName("liked_count")]
         public int LikedCount { get; set; }
@@ -488,7 +488,7 @@ public class CompactOrderData
         public string Sku { get; set; }
 
         [JsonPropertyName("snapshot_id")]
-        public object SnapshotId { get; set; }
+        public long? SnapshotId { get; set; }
     }
 
     public class CompactSellerAddress

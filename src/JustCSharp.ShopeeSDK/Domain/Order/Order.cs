@@ -168,7 +168,7 @@ public class Order
     public string BuyerAddressPhone { get; set; }
 
     [JsonPropertyName("cancellation_end_date")]
-    public object CancellationEndDate { get; set; }
+    public long? CancellationEndDate { get; set; }
 
     [JsonPropertyName("pay_by_credit_card")]
     public bool PayByCreditCard { get; set; }
@@ -198,7 +198,7 @@ public class Order
     public bool FulfillByShopee { get; set; }
 
     [JsonPropertyName("preferred_delivery_timeslot")]
-    public object PreferredDeliveryTimeslot { get; set; }
+    public long? PreferredDeliveryTimeslot { get; set; }
 
     [JsonPropertyName("buyer_cpf_id")]
     public string BuyerCpfId { get; set; }
@@ -207,7 +207,7 @@ public class Order
     public string BuyerTaxId { get; set; }
 
     [JsonPropertyName("buyer_tax_type_label")]
-    public object BuyerTaxTypeLabel { get; set; }
+    public string BuyerTaxTypeLabel { get; set; }
 
     [JsonPropertyName("is_tax_exempted")]
     public bool IsTaxExempted { get; set; }
@@ -234,7 +234,7 @@ public class Order
     public object PrescriptionImages { get; set; }
 
     [JsonPropertyName("pharmacist_name")]
-    public object PharmacistName { get; set; }
+    public string PharmacistName { get; set; }
 
     [JsonPropertyName("prescription_reject_reason")]
     public object PrescriptionRejectReason { get; set; }
@@ -284,10 +284,10 @@ public class Order
     public class ItemModel
     {
         [JsonPropertyName("model_id")]
-        public object ModelId { get; set; }
+        public long? ModelId { get; set; }
 
         [JsonPropertyName("item_id")]
-        public object ItemId { get; set; }
+        public long? ItemId { get; set; }
 
         [JsonPropertyName("name")]
         public string Name { get; set; }
@@ -338,7 +338,7 @@ public class Order
         public bool IsWholesale { get; set; }
 
         [JsonPropertyName("item_id")]
-        public object ItemId { get; set; }
+        public long? ItemId { get; set; }
 
         [JsonPropertyName("item_list")]
         public List<object> ItemList { get; set; }
@@ -353,7 +353,7 @@ public class Order
         public string LineItemId { get; set; }
 
         [JsonPropertyName("model_id")]
-        public object ModelId { get; set; }
+        public long? ModelId { get; set; }
 
         [JsonPropertyName("order_price")]
         public string OrderPrice { get; set; }
@@ -392,10 +392,10 @@ public class Order
         public bool IsPreOrder { get; set; }
 
         [JsonPropertyName("item_id")]
-        public object ItemId { get; set; }
+        public long? ItemId { get; set; }
 
         [JsonPropertyName("model_id")]
-        public object ModelId { get; set; }
+        public long? ModelId { get; set; }
 
         [JsonPropertyName("status")]
         public int Status { get; set; }

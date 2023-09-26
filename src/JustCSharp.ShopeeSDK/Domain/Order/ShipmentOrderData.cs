@@ -9,7 +9,7 @@ public class ShipmentOrderData
     public long  ShopId { get; set; }
 
     [JsonPropertyName("order_id")]
-    public object OrderId { get; set; }
+    public long OrderId { get; set; }
 
     [JsonPropertyName("order_sn")]
     public string OrderSn { get; set; }
@@ -84,7 +84,7 @@ public class ShipmentOrderData
     public string BuyerAddressPhone { get; set; }
 
     [JsonPropertyName("cancellation_end_date")]
-    public object CancellationEndDate { get; set; }
+    public long? CancellationEndDate { get; set; }
 
     [JsonPropertyName("order_ratable")]
     public bool OrderRatable { get; set; }
@@ -254,10 +254,10 @@ public class ShipmentOrderData
     public class ItemModel
     {
         [JsonPropertyName("model_id")]
-        public object ModelId { get; set; }
+        public long? ModelId { get; set; }
 
         [JsonPropertyName("item_id")]
-        public object ItemId { get; set; }
+        public long? ItemId { get; set; }
 
         [JsonPropertyName("name")]
         public string Name { get; set; }
@@ -275,7 +275,7 @@ public class ShipmentOrderData
         public string PriceBeforeDiscount { get; set; }
 
         [JsonPropertyName("promotion_id")]
-        public object PromotionId { get; set; }
+        public long? PromotionId { get; set; }
 
         [JsonPropertyName("rebate_price")]
         public string RebatePrice { get; set; }
@@ -320,13 +320,13 @@ public class ShipmentOrderData
         public string ItemPrice { get; set; }
 
         [JsonPropertyName("item_id")]
-        public object ItemId { get; set; }
+        public long? ItemId { get; set; }
 
         [JsonPropertyName("line_item_id")]
         public string LineItemId { get; set; }
 
         [JsonPropertyName("model_id")]
-        public object ModelId { get; set; }
+        public long? ModelId { get; set; }
 
         [JsonPropertyName("order_price")]
         public string OrderPrice { get; set; }
@@ -335,7 +335,7 @@ public class ShipmentOrderData
         public string PriceBeforeBundle { get; set; }
 
         [JsonPropertyName("snapshot_id")]
-        public object SnapshotId { get; set; }
+        public long? SnapshotId { get; set; }
 
         [JsonPropertyName("status")]
         public int Status { get; set; }
@@ -428,13 +428,13 @@ public class ShipmentOrderData
         public bool IsPreOrder { get; set; }
 
         [JsonPropertyName("item_id")]
-        public object ItemId { get; set; }
+        public long? ItemId { get; set; }
 
         [JsonPropertyName("line_item_id")]
-        public object LineItemId { get; set; }
+        public long? LineItemId { get; set; }
 
         [JsonPropertyName("model_id")]
-        public object ModelId { get; set; }
+        public long? ModelId { get; set; }
 
         [JsonPropertyName("liked_count")]
         public int LikedCount { get; set; }
@@ -458,7 +458,7 @@ public class ShipmentOrderData
         public string Sku { get; set; }
 
         [JsonPropertyName("snapshot_id")]
-        public object SnapshotId { get; set; }
+        public long? SnapshotId { get; set; }
     }
 
     public class ShipmentSellerAddress

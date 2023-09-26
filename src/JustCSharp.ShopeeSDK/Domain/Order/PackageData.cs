@@ -66,7 +66,7 @@ public class PackageData
     public PackageOrderAction OrderAction { get; set; }
 
     [JsonPropertyName("order_id")]
-    public object OrderId { get; set; }
+    public long OrderId { get; set; }
 
     [JsonPropertyName("order_sn")]
     public string OrderSn { get; set; }
@@ -141,7 +141,7 @@ public class PackageData
     public int Acl2AckDate3pl { get; set; }
 
     [JsonPropertyName("pre_authorization_status")]
-    public object PreAuthorizationStatus { get; set; }
+    public int? PreAuthorizationStatus { get; set; }
 
     [JsonPropertyName("order_create_time")]
     public int OrderCreateTime { get; set; }
@@ -152,13 +152,13 @@ public class PackageData
     public class PackageItem
     {
         [JsonPropertyName("item_id")]
-        public object ItemId { get; set; }
+        public long? ItemId { get; set; }
 
         [JsonPropertyName("model_id")]
-        public object ModelId { get; set; }
+        public long? ModelId { get; set; }
 
         [JsonPropertyName("order_item_id")]
-        public object OrderItemId { get; set; }
+        public long? OrderItemId { get; set; }
 
         [JsonPropertyName("group_id")]
         public long GroupId { get; set; }
