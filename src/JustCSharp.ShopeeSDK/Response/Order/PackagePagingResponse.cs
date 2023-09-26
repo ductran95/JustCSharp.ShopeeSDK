@@ -6,7 +6,7 @@ namespace JustCSharp.ShopeeSDK.Response.Order;
 public class PackagePagingResponse<T> where T : class
 {
     [JsonPropertyName("total")]
-    public int Total { get; set; }
+    public long  Total { get; set; }
 
     [JsonPropertyName("page_number")]
     public int PageNumber { get; set; }

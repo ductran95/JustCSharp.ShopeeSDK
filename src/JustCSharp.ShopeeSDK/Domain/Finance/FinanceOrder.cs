@@ -15,7 +15,7 @@ public class FinanceOrder
     public long OrderId { get; set; }
 
     [JsonPropertyName("return_id")]
-    public int ReturnId { get; set; }
+    public long  ReturnId { get; set; }
 
     [JsonPropertyName("order_item_price_infos")]
     public object OrderItemPriceInfos { get; set; }
@@ -24,10 +24,10 @@ public class FinanceOrder
     public List<OrderItem> OrderItems { get; set; }
 
     [JsonPropertyName("order_chargeable_weight")]
-    public int OrderChargeableWeight { get; set; }
+    public long  OrderChargeableWeight { get; set; }
 
     [JsonPropertyName("shop_id")]
-    public int ShopId { get; set; }
+    public long  ShopId { get; set; }
 
     [JsonPropertyName("is_affiliated_shop_order")]
     public bool IsAffiliatedShopOrder { get; set; }
@@ -83,22 +83,22 @@ public class FinanceOrder
         public long ItemId { get; set; }
 
         [JsonPropertyName("cancellation_tag_qty")]
-        public int CancellationTagQty { get; set; }
+        public long  CancellationTagQty { get; set; }
 
         [JsonPropertyName("add_on_deal_id")]
-        public int AddOnDealId { get; set; }
+        public long  AddOnDealId { get; set; }
 
         [JsonPropertyName("line_item_id")]
-        public int LineItemId { get; set; }
+        public long  LineItemId { get; set; }
 
         [JsonPropertyName("index")]
-        public int Index { get; set; }
+        public long  Index { get; set; }
 
         [JsonPropertyName("rr_tag_qty")]
-        public int RrTagQty { get; set; }
+        public long  RrTagQty { get; set; }
 
         [JsonPropertyName("comm_fee_rate")]
-        public int CommFeeRate { get; set; }
+        public long  CommFeeRate { get; set; }
 
         [JsonPropertyName("item_model")]
         public ItemModel ItemModel { get; set; }

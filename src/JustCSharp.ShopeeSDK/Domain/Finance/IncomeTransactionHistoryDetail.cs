@@ -6,19 +6,19 @@ namespace JustCSharp.ShopeeSDK.Domain.Finance;
 public class IncomeTransactionHistoryDetail
 {
     [JsonPropertyName("amount")]
-    public int Amount { get; set; }
+    public long  Amount { get; set; }
 
     [JsonPropertyName("buyer_payment_info")]
     public TransactionBuyerPaymentInfo BuyerPaymentInfo { get; set; }
 
     [JsonPropertyName("ctime")]
-    public int Ctime { get; set; }
+    public long  Ctime { get; set; }
 
     [JsonPropertyName("exchange_rate")]
-    public int ExchangeRate { get; set; }
+    public long  ExchangeRate { get; set; }
 
     [JsonPropertyName("id")]
-    public int Id { get; set; }
+    public long  Id { get; set; }
 
     [JsonPropertyName("is_cb_sip_a_shop")]
     public bool IsCbSipAShop { get; set; }
@@ -33,16 +33,16 @@ public class IncomeTransactionHistoryDetail
     public TransactionPaymentInfo PaymentInfo { get; set; }
 
     [JsonPropertyName("payout_amount")]
-    public int PayoutAmount { get; set; }
+    public long  PayoutAmount { get; set; }
 
     [JsonPropertyName("pri_currency_region")]
     public string PriCurrencyRegion { get; set; }
 
     [JsonPropertyName("price_before_discount")]
-    public int PriceBeforeDiscount { get; set; }
+    public long  PriceBeforeDiscount { get; set; }
 
     [JsonPropertyName("rebate_price")]
-    public int RebatePrice { get; set; }
+    public long  RebatePrice { get; set; }
 
     [JsonPropertyName("release_time")]
     public int ReleaseTime { get; set; }

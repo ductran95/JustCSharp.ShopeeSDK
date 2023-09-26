@@ -9,7 +9,7 @@ public class OrderIdData
     public object OrderId { get; set; }
 
     [JsonPropertyName("shop_id")]
-    public int ShopId { get; set; }
+    public long  ShopId { get; set; }
 
     [JsonPropertyName("region_id")]
     public string RegionId { get; set; }

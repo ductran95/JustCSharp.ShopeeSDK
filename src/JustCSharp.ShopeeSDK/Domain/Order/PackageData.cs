@@ -6,16 +6,16 @@ namespace JustCSharp.ShopeeSDK.Domain.Order;
 public class PackageData
 {
     [JsonPropertyName("channel_id")]
-    public int ChannelId { get; set; }
+    public long  ChannelId { get; set; }
 
     [JsonPropertyName("consignment_no")]
     public string ConsignmentNo { get; set; }
 
     [JsonPropertyName("dropoff_b2c")]
-    public int DropoffB2c { get; set; }
+    public long  DropoffB2c { get; set; }
 
     [JsonPropertyName("expire_time")]
-    public int ExpireTime { get; set; }
+    public long  ExpireTime { get; set; }
 
     [JsonPropertyName("extra_flag")]
     public int ExtraFlag { get; set; }
@@ -27,7 +27,7 @@ public class PackageData
     public int LogisticsFlag { get; set; }
 
     [JsonPropertyName("pickup_time")]
-    public int PickupTime { get; set; }
+    public long  PickupTime { get; set; }
 
     [JsonPropertyName("ref1")]
     public string Ref1 { get; set; }
@@ -45,7 +45,7 @@ public class PackageData
     public string CheckoutCarrierName { get; set; }
 
     [JsonPropertyName("checkout_channel_id")]
-    public int CheckoutChannelId { get; set; }
+    public long  CheckoutChannelId { get; set; }
 
     [JsonPropertyName("package_number")]
     public string PackageNumber { get; set; }

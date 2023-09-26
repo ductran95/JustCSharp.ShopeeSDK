@@ -25,7 +25,7 @@ public class GetOrderIdListRequest : ShopeeRequestBase<GetOrderIdListResponse>
 
     [JsonIgnore]
     [QueryPropertyName("total")]
-    public int Total { get; set; }
+    public long  Total { get; set; }
 
     [JsonIgnore]
     [QueryPropertyName("flip_direction")]

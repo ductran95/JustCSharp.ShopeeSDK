@@ -6,7 +6,7 @@ namespace JustCSharp.ShopeeSDK.Domain.Order;
 public class ShipmentOrderData
 {
     [JsonPropertyName("shop_id")]
-    public int ShopId { get; set; }
+    public long  ShopId { get; set; }
 
     [JsonPropertyName("order_id")]
     public object OrderId { get; set; }
@@ -39,19 +39,19 @@ public class ShipmentOrderData
     public int Status { get; set; }
 
     [JsonPropertyName("complete_time")]
-    public int CompleteTime { get; set; }
+    public long  CompleteTime { get; set; }
 
     [JsonPropertyName("status_ext")]
     public int StatusExt { get; set; }
 
     [JsonPropertyName("arrange_pickup_by_date")]
-    public int ArrangePickupByDate { get; set; }
+    public long  ArrangePickupByDate { get; set; }
 
     [JsonPropertyName("auto_cancel_3pl_ack_date")]
-    public int AutoCancel3plAckDate { get; set; }
+    public long  AutoCancel3plAckDate { get; set; }
 
     [JsonPropertyName("auto_cancel_arrange_ship_date")]
-    public int AutoCancelArrangeShipDate { get; set; }
+    public long  AutoCancelArrangeShipDate { get; set; }
 
     [JsonPropertyName("buyer_is_rated")]
     public int BuyerIsRated { get; set; }

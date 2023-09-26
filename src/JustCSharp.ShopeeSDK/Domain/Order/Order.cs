@@ -6,7 +6,7 @@ namespace JustCSharp.ShopeeSDK.Domain.Order;
 public class Order
 {
     [JsonPropertyName("shop_id")]
-    public int ShopId { get; set; }
+    public long  ShopId { get; set; }
 
     [JsonPropertyName("order_id")]
     public long OrderId { get; set; }
@@ -45,10 +45,10 @@ public class Order
     public int Status { get; set; }
 
     [JsonPropertyName("create_time")]
-    public int CreateTime { get; set; }
+    public long  CreateTime { get; set; }
 
     [JsonPropertyName("complete_time")]
-    public int CompleteTime { get; set; }
+    public long  CompleteTime { get; set; }
 
     [JsonPropertyName("status_ext")]
     public int StatusExt { get; set; }

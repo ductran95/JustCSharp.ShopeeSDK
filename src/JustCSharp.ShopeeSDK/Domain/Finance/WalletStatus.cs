@@ -5,13 +5,13 @@ namespace JustCSharp.ShopeeSDK.Domain.Finance;
 public class WalletStatus
 {
     [JsonPropertyName("withdrawal_no")]
-    public int WithdrawalNo { get; set; }
+    public long  WithdrawalNo { get; set; }
 
     [JsonPropertyName("description")]
     public string Description { get; set; }
 
     [JsonPropertyName("max_amount")]
-    public int MaxAmount { get; set; }
+    public long  MaxAmount { get; set; }
 
     [JsonPropertyName("is_active")]
     public bool IsActive { get; set; }
@@ -20,16 +20,16 @@ public class WalletStatus
     public WalletLimitData LimitData { get; set; }
 
     [JsonPropertyName("remaining_withdrawals")]
-    public int RemainingWithdrawals { get; set; }
+    public long  RemainingWithdrawals { get; set; }
 
     [JsonPropertyName("active_balance")]
-    public int ActiveBalance { get; set; }
+    public long  ActiveBalance { get; set; }
 
     [JsonPropertyName("num_of_free_times")]
-    public int NumOfFreeTimes { get; set; }
+    public long  NumOfFreeTimes { get; set; }
 
     [JsonPropertyName("balance")]
-    public int Balance { get; set; }
+    public long  Balance { get; set; }
 
     public class WalletLimitData
     {

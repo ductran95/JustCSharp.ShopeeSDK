@@ -21,7 +21,7 @@ public class GetPackageListRequest : ShopeeRequestBase<GetPackageListResponse>
 
     [JsonIgnore]
     [QueryPropertyName("total")]
-    public int Total { get; set; }
+    public long  Total { get; set; }
 
     [JsonIgnore]
     [QueryPropertyName("page_sentinel")]

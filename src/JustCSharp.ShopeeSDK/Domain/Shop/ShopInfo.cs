@@ -5,7 +5,7 @@ namespace JustCSharp.ShopeeSDK.Domain.Shop;
 public class ShopInfo
 {
     [JsonPropertyName("shop_id")]
-    public int ShopId { get; set; }
+    public long  ShopId { get; set; }
 
     [JsonPropertyName("shop_region")]
     public string ShopRegion { get; set; }

@@ -26,7 +26,7 @@ public class BankAccount
     public string CompanyId { get; set; }
 
     [JsonPropertyName("bank_account_id")]
-    public int BankAccountId { get; set; }
+    public long  BankAccountId { get; set; }
 
     [JsonPropertyName("currency")]
     public string Currency { get; set; }
@@ -35,7 +35,7 @@ public class BankAccount
     public string AccountNumber { get; set; }
 
     [JsonPropertyName("mtime")]
-    public int Mtime { get; set; }
+    public long  Mtime { get; set; }
 
     [JsonPropertyName("ic_number")]
     public string IcNumber { get; set; }
@@ -44,7 +44,7 @@ public class BankAccount
     public string LogoUrl { get; set; }
 
     [JsonPropertyName("bank_name_id")]
-    public int BankNameId { get; set; }
+    public long  BankNameId { get; set; }
 
     [JsonPropertyName("account_name")]
     public string AccountName { get; set; }
