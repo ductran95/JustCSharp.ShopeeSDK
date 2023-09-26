@@ -3,10 +3,13 @@ using System.Text.Json.Serialization;
 
 namespace JustCSharp.ShopeeSDK.Domain.Finance;
 
-public class WalletTransaction : IShopeeObject
+public class WalletTransaction
 {
+    [JsonPropertyName("comment")]
+    public string Comment { get; set; }
+
     [JsonPropertyName("withdrawal_split_length")]
-    public long WithdrawalSplitLength { get; set; }
+    public int WithdrawalSplitLength { get; set; }
 
     [JsonPropertyName("orders")]
     public List<object> Orders { get; set; }
@@ -15,46 +18,49 @@ public class WalletTransaction : IShopeeObject
     public string FastEscrowDeductId { get; set; }
 
     [JsonPropertyName("wallet_type")]
-    public long WalletType { get; set; }
+    public int WalletType { get; set; }
 
     [JsonPropertyName("fast_escrow_group_id")]
     public string FastEscrowGroupId { get; set; }
 
     [JsonPropertyName("trans_fee")]
-    public double TransFee { get; set; }
+    public int TransFee { get; set; }
 
     [JsonPropertyName("type")]
-    public long Type { get; set; }
+    public int Type { get; set; }
 
     [JsonPropertyName("refund_sn")]
     public string RefundSn { get; set; }
 
     [JsonPropertyName("bank_account_id")]
-    public long BankAccountId { get; set; }
+    public int BankAccountId { get; set; }
+
+    [JsonPropertyName("validation_month")]
+    public object ValidationMonth { get; set; }
 
     [JsonPropertyName("withdrawal_type")]
-    public long WithdrawalType { get; set; }
+    public int WithdrawalType { get; set; }
 
     [JsonPropertyName("admin_fee")]
-    public double AdminFee { get; set; }
+    public int AdminFee { get; set; }
 
     [JsonPropertyName("brand_validation_id")]
-    public long BrandValidationId { get; set; }
+    public int BrandValidationId { get; set; }
 
     [JsonPropertyName("user_id")]
-    public long UserId { get; set; }
+    public int UserId { get; set; }
 
     [JsonPropertyName("paid_amount")]
-    public double PaidAmount { get; set; }
+    public int PaidAmount { get; set; }
 
     [JsonPropertyName("fast_escrow_repayment_id")]
     public string FastEscrowRepaymentId { get; set; }
 
     [JsonPropertyName("withdrawal_total_amount")]
-    public double WithdrawalTotalAmount { get; set; }
+    public int WithdrawalTotalAmount { get; set; }
 
     [JsonPropertyName("source")]
-    public long Source { get; set; }
+    public int Source { get; set; }
 
     [JsonPropertyName("user_name")]
     public string UserName { get; set; }
@@ -63,16 +69,16 @@ public class WalletTransaction : IShopeeObject
     public string ProductName { get; set; }
 
     [JsonPropertyName("transaction_id")]
-    public long TransactionId { get; set; }
+    public string TransactionId { get; set; }
 
     [JsonPropertyName("item_length")]
-    public long ItemLength { get; set; }
+    public int ItemLength { get; set; }
 
     [JsonPropertyName("status")]
     public int Status { get; set; }
 
     [JsonPropertyName("cancel_time")]
-    public long CancelTime { get; set; }
+    public int CancelTime { get; set; }
 
     [JsonPropertyName("fast_escrow_repay_id")]
     public string FastEscrowRepayId { get; set; }
@@ -84,7 +90,10 @@ public class WalletTransaction : IShopeeObject
     public string Description { get; set; }
 
     [JsonPropertyName("withdraw_target_type")]
-    public long WithdrawTargetType { get; set; }
+    public int WithdrawTargetType { get; set; }
+
+    [JsonPropertyName("order_id")]
+    public string OrderId { get; set; }
 
     [JsonPropertyName("target_id")]
     public string TargetId { get; set; }
@@ -102,19 +111,19 @@ public class WalletTransaction : IShopeeObject
     public string BankAccountNumber { get; set; }
 
     [JsonPropertyName("ctime")]
-    public long Ctime { get; set; }
+    public int Ctime { get; set; }
 
     [JsonPropertyName("withdrawal_target_type")]
-    public long WithdrawalTargetType { get; set; }
+    public int WithdrawalTargetType { get; set; }
 
     [JsonPropertyName("current_balance")]
-    public double CurrentBalance { get; set; }
+    public int CurrentBalance { get; set; }
 
     [JsonPropertyName("complete_time")]
-    public long CompleteTime { get; set; }
+    public int CompleteTime { get; set; }
 
     [JsonPropertyName("amount")]
-    public double Amount { get; set; }
+    public int Amount { get; set; }
 
     [JsonPropertyName("fast_escrow_order_id")]
     public string FastEscrowOrderId { get; set; }
@@ -123,5 +132,5 @@ public class WalletTransaction : IShopeeObject
     public string FastEscrowSettleId { get; set; }
 
     [JsonPropertyName("withdrawal_split_idx")]
-    public long WithdrawalSplitIdx { get; set; }
+    public int WithdrawalSplitIdx { get; set; }
 }

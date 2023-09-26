@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustCSharp.ShopeeSDK", "src\JustCSharp.ShopeeSDK\JustCSharp.ShopeeSDK.csproj", "{49551EF8-1DC9-42AF-9ED6-9B892C4EDF92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustCSharp.ShopeeSDK.IntegrationTest", "test\JustCSharp.ShopeeSDK.IntegrationTest\JustCSharp.ShopeeSDK.IntegrationTest.csproj", "{BB87548D-53BA-42D3-AFF2-C3CF9635FF34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{49551EF8-1DC9-42AF-9ED6-9B892C4EDF92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49551EF8-1DC9-42AF-9ED6-9B892C4EDF92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49551EF8-1DC9-42AF-9ED6-9B892C4EDF92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB87548D-53BA-42D3-AFF2-C3CF9635FF34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB87548D-53BA-42D3-AFF2-C3CF9635FF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB87548D-53BA-42D3-AFF2-C3CF9635FF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB87548D-53BA-42D3-AFF2-C3CF9635FF34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

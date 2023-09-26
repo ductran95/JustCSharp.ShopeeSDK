@@ -10,7 +10,9 @@ public abstract class ShopeeResponseBase<T> : IShopeeResponse where T : class
     [JsonPropertyName("data")]
     public virtual T Data { get; set; }
 
-    public virtual int ErrorCode { get; set; }
+    [JsonPropertyName("code")]
+    public virtual int Code { get; set; }
 
+    [JsonPropertyName("message")]
     public virtual string Message { get; set; }
 }

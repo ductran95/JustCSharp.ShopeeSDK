@@ -14,12 +14,15 @@ public class ShopeePagingResponse<T> where T : class
 
 public class ShopeePagingInfoResponse
 {
-    [JsonPropertyName("total")]
-    public int Total { get; set; }
-
     [JsonPropertyName("page_number")]
     public int PageNumber { get; set; }
+    
+    [JsonPropertyName("page_range")]
+    public int PageRange { get; set; }
 
     [JsonPropertyName("page_size")]
     public int PageSize { get; set; }
+    
+    [JsonPropertyName("total")]
+    public long Total { get; set; }
 }

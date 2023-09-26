@@ -24,10 +24,18 @@ public class GetPackageListRequest : ShopeeRequestBase<GetPackageListResponse>
     public int Total { get; set; }
 
     [JsonIgnore]
+    [QueryPropertyName("page_sentinel")]
+    public string PageSentinel { get; set; } = "0,0";
+    
+    [JsonIgnore]
     [QueryPropertyName("sort_by")]
     public string SortBy { get; set; }
 
     [JsonIgnore]
     [QueryPropertyName("source")]
     public string Source { get; set; }
+    
+    [JsonIgnore]
+    [QueryPropertyName("rts_filter")]
+    public string RtsFilter { get; set; }
 }

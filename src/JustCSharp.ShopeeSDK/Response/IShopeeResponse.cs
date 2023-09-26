@@ -4,8 +4,8 @@ namespace JustCSharp.ShopeeSDK.Response;
 
 public interface IShopeeResponse
 {
-    [JsonPropertyName("errcode")]
-    int ErrorCode { get; set; }
+    [JsonPropertyName("code")]
+    int Code { get; set; }
 
     [JsonPropertyName("message")]
     string Message { get; set; }
