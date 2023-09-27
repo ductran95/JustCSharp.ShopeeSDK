@@ -11,7 +11,7 @@ public class WalletStatus
     public string Description { get; set; }
 
     [JsonPropertyName("max_amount")]
-    public long  MaxAmount { get; set; }
+    public decimal MaxAmount { get; set; }
 
     [JsonPropertyName("is_active")]
     public bool IsActive { get; set; }
@@ -23,21 +23,21 @@ public class WalletStatus
     public long  RemainingWithdrawals { get; set; }
 
     [JsonPropertyName("active_balance")]
-    public long  ActiveBalance { get; set; }
+    public decimal  ActiveBalance { get; set; }
 
     [JsonPropertyName("num_of_free_times")]
     public long  NumOfFreeTimes { get; set; }
 
     [JsonPropertyName("balance")]
-    public long  Balance { get; set; }
+    public decimal  Balance { get; set; }
 
     public class WalletLimitData
     {
         [JsonPropertyName("min_limit")]
-        public int MinLimit { get; set; }
+        public decimal MinLimit { get; set; }
 
         [JsonPropertyName("limit")]
-        public int Limit { get; set; }
+        public decimal Limit { get; set; }
 
         [JsonPropertyName("is_higher_limit")]
         public int IsHigherLimit { get; set; }

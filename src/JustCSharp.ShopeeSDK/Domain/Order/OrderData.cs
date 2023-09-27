@@ -355,7 +355,7 @@ public class OrderData
         public List<int> RatingCount { get; set; }
 
         [JsonPropertyName("rating_star")]
-        public int RatingStar { get; set; }
+        public decimal RatingStar { get; set; }
 
         [JsonPropertyName("shop_id")]
         public int ShopId { get; set; }
