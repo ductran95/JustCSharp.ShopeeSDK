@@ -14,13 +14,13 @@ public class ForderLogistic
     public int Status { get; set; }
 
     [JsonPropertyName("deliver_time")]
-    public int DeliverTime { get; set; }
+    public long DeliverTime { get; set; }
 
     [JsonPropertyName("channel_id")]
-    public int ChannelId { get; set; }
+    public long ChannelId { get; set; }
 
     [JsonPropertyName("actual_pickup_time")]
-    public int ActualPickupTime { get; set; }
+    public long ActualPickupTime { get; set; }
 
     [JsonPropertyName("ref1")]
     public string Ref1 { get; set; }
@@ -29,19 +29,19 @@ public class ForderLogistic
     public int Type { get; set; }
 
     [JsonPropertyName("pickup_time")]
-    public int PickupTime { get; set; }
+    public long PickupTime { get; set; }
 
     [JsonPropertyName("user_id")]
-    public int UserId { get; set; }
+    public long UserId { get; set; }
 
     [JsonPropertyName("actual_deliver_time")]
-    public int ActualDeliverTime { get; set; }
+    public long ActualDeliverTime { get; set; }
 
     [JsonPropertyName("logid")]
-    public int Logid { get; set; }
+    public long Logid { get; set; }
 
     [JsonPropertyName("mtime")]
-    public int Mtime { get; set; }
+    public long Mtime { get; set; }
 
     [JsonPropertyName("consignment_no")]
     public string ConsignmentNo { get; set; }
@@ -53,13 +53,13 @@ public class ForderLogistic
     public string ChannelStatus { get; set; }
 
     [JsonPropertyName("ctime")]
-    public int Ctime { get; set; }
+    public long Ctime { get; set; }
 
     [JsonPropertyName("thirdparty_tracking_number")]
     public string ThirdpartyTrackingNumber { get; set; }
 
     [JsonPropertyName("pickup_cutoff_time")]
-    public int PickupCutoffTime { get; set; }
+    public long PickupCutoffTime { get; set; }
 
     [JsonPropertyName("logistical_flag")]
     public int LogisticalFlag { get; set; }

@@ -45,10 +45,10 @@ public class WalletTransaction
     public int AdminFee { get; set; }
 
     [JsonPropertyName("brand_validation_id")]
-    public int BrandValidationId { get; set; }
+    public long BrandValidationId { get; set; }
 
     [JsonPropertyName("user_id")]
-    public int UserId { get; set; }
+    public long UserId { get; set; }
 
     [JsonPropertyName("paid_amount")]
     public int PaidAmount { get; set; }
@@ -78,7 +78,7 @@ public class WalletTransaction
     public int Status { get; set; }
 
     [JsonPropertyName("cancel_time")]
-    public int CancelTime { get; set; }
+    public long CancelTime { get; set; }
 
     [JsonPropertyName("fast_escrow_repay_id")]
     public string FastEscrowRepayId { get; set; }
@@ -120,7 +120,7 @@ public class WalletTransaction
     public int CurrentBalance { get; set; }
 
     [JsonPropertyName("complete_time")]
-    public int CompleteTime { get; set; }
+    public long CompleteTime { get; set; }
 
     [JsonPropertyName("amount")]
     public int Amount { get; set; }

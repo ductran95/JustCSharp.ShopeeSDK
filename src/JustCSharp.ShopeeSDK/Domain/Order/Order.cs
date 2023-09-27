@@ -57,25 +57,25 @@ public class Order
     public int LogisticsStatus { get; set; }
 
     [JsonPropertyName("pickup_time")]
-    public int PickupTime { get; set; }
+    public long PickupTime { get; set; }
 
     [JsonPropertyName("shipping_confirm_time")]
-    public int ShippingConfirmTime { get; set; }
+    public long ShippingConfirmTime { get; set; }
 
     [JsonPropertyName("list_type")]
     public int ListType { get; set; }
 
     [JsonPropertyName("arrange_pickup_by_date")]
-    public int ArrangePickupByDate { get; set; }
+    public long ArrangePickupByDate { get; set; }
 
     [JsonPropertyName("auto_cancel_3pl_ack_date")]
-    public int AutoCancel3plAckDate { get; set; }
+    public long AutoCancel3plAckDate { get; set; }
 
     [JsonPropertyName("auto_cancel_arrange_ship_date")]
-    public int AutoCancelArrangeShipDate { get; set; }
+    public long AutoCancelArrangeShipDate { get; set; }
 
     [JsonPropertyName("buyer_last_change_address_time")]
-    public int BuyerLastChangeAddressTime { get; set; }
+    public long BuyerLastChangeAddressTime { get; set; }
 
     [JsonPropertyName("buyer_cancel_reason")]
     public int BuyerCancelReason { get; set; }
@@ -84,13 +84,13 @@ public class Order
     public int CancelReasonExt { get; set; }
 
     [JsonPropertyName("cancel_userid")]
-    public int CancelUserid { get; set; }
+    public long CancelUserid { get; set; }
 
     [JsonPropertyName("dropshipping_info")]
     public OrderDropshippingInfo DropshippingInfo { get; set; }
 
     [JsonPropertyName("escrow_release_time")]
-    public int EscrowReleaseTime { get; set; }
+    public long EscrowReleaseTime { get; set; }
 
     [JsonPropertyName("instant_buyercancel_toship")]
     public bool InstantBuyercancelToship { get; set; }
@@ -99,7 +99,7 @@ public class Order
     public bool IsBuyercancelToship { get; set; }
 
     [JsonPropertyName("logid")]
-    public int Logid { get; set; }
+    public long Logid { get; set; }
 
     [JsonPropertyName("logistics_channel")]
     public int LogisticsChannel { get; set; }
@@ -108,40 +108,40 @@ public class Order
     public int LogisticsFlag { get; set; }
 
     [JsonPropertyName("payby_date")]
-    public int PaybyDate { get; set; }
+    public long PaybyDate { get; set; }
 
     [JsonPropertyName("pickup_attempts")]
     public int PickupAttempts { get; set; }
 
     [JsonPropertyName("pickup_cutoff_time")]
-    public int PickupCutoffTime { get; set; }
+    public long PickupCutoffTime { get; set; }
 
     [JsonPropertyName("price_before_discount")]
     public string PriceBeforeDiscount { get; set; }
 
     [JsonPropertyName("rate_by_date")]
-    public int RateByDate { get; set; }
+    public long RateByDate { get; set; }
 
     [JsonPropertyName("buyer_rate_by_date")]
-    public int BuyerRateByDate { get; set; }
+    public long BuyerRateByDate { get; set; }
 
     [JsonPropertyName("seller_address")]
     public OrderSellerAddress SellerAddress { get; set; }
 
     [JsonPropertyName("seller_address_id")]
-    public int SellerAddressId { get; set; }
+    public long SellerAddressId { get; set; }
 
     [JsonPropertyName("seller_due_date")]
-    public int SellerDueDate { get; set; }
+    public long SellerDueDate { get; set; }
 
     [JsonPropertyName("ship_by_date")]
-    public int ShipByDate { get; set; }
+    public long ShipByDate { get; set; }
 
     [JsonPropertyName("shipping_proof")]
     public string ShippingProof { get; set; }
 
     [JsonPropertyName("fulfillment_channel_id")]
-    public int FulfillmentChannelId { get; set; }
+    public long FulfillmentChannelId { get; set; }
 
     [JsonPropertyName("fulfillment_carrier_name")]
     public string FulfillmentCarrierName { get; set; }
@@ -150,7 +150,7 @@ public class Order
     public int FulfillmentShippingMethod { get; set; }
 
     [JsonPropertyName("masking_channel_id")]
-    public int MaskingChannelId { get; set; }
+    public long MaskingChannelId { get; set; }
 
     [JsonPropertyName("masking_carrier_name")]
     public string MaskingCarrierName { get; set; }
@@ -159,7 +159,7 @@ public class Order
     public string CheckoutCarrierName { get; set; }
 
     [JsonPropertyName("checkout_channel_id")]
-    public int CheckoutChannelId { get; set; }
+    public long CheckoutChannelId { get; set; }
 
     [JsonPropertyName("buyer_address_name")]
     public string BuyerAddressName { get; set; }
@@ -177,10 +177,10 @@ public class Order
     public string Note { get; set; }
 
     [JsonPropertyName("note_mtime")]
-    public int NoteMtime { get; set; }
+    public long NoteMtime { get; set; }
 
     [JsonPropertyName("return_id")]
-    public int ReturnId { get; set; }
+    public long ReturnId { get; set; }
 
     [JsonPropertyName("order_ratable")]
     public bool OrderRatable { get; set; }
@@ -245,7 +245,7 @@ public class Order
         public int DeliverySuccCount { get; set; }
 
         [JsonPropertyName("user_id")]
-        public int UserId { get; set; }
+        public long UserId { get; set; }
 
         [JsonPropertyName("user_name")]
         public string UserName { get; set; }
@@ -263,7 +263,7 @@ public class Order
         public decimal RatingStar { get; set; }
 
         [JsonPropertyName("shop_id")]
-        public int ShopId { get; set; }
+        public long ShopId { get; set; }
 
         [JsonPropertyName("followed")]
         public bool Followed { get; set; }
@@ -305,7 +305,7 @@ public class Order
     public class OrderItem
     {
         [JsonPropertyName("add_on_deal_id")]
-        public int AddOnDealId { get; set; }
+        public long AddOnDealId { get; set; }
 
         [JsonPropertyName("amount")]
         public int Amount { get; set; }
@@ -410,10 +410,10 @@ public class Order
     public class OrderSellerAddress
     {
         [JsonPropertyName("address_id")]
-        public int AddressId { get; set; }
+        public long AddressId { get; set; }
 
         [JsonPropertyName("user_id")]
-        public int UserId { get; set; }
+        public long UserId { get; set; }
 
         [JsonPropertyName("name")]
         public string Name { get; set; }

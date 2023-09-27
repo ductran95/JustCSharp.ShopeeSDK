@@ -20,10 +20,10 @@ public class Package
         public long OrderItemId { get; set; }
 
         [JsonPropertyName("virtual_item_id")]
-        public int VirtualItemId { get; set; }
+        public long VirtualItemId { get; set; }
 
         [JsonPropertyName("virtual_model_id")]
-        public int VirtualModelId { get; set; }
+        public long VirtualModelId { get; set; }
 
         [JsonPropertyName("line_item_id")]
         public string LineItemId { get; set; }
@@ -80,7 +80,7 @@ public class Package
         public int ParcelNo { get; set; }
 
         [JsonPropertyName("channel_id")]
-        public int ChannelId { get; set; }
+        public long ChannelId { get; set; }
 
         [JsonPropertyName("items")]
         public List<Item> Items { get; set; }
@@ -131,10 +131,10 @@ public class Package
         public string CheckoutCarrierName { get; set; }
 
         [JsonPropertyName("checkout_channel_id")]
-        public int CheckoutChannelId { get; set; }
+        public long CheckoutChannelId { get; set; }
 
         [JsonPropertyName("fulfillment_channel_id")]
-        public int FulfillmentChannelId { get; set; }
+        public long FulfillmentChannelId { get; set; }
 
         [JsonPropertyName("fulfillment_carrier_name")]
         public string FulfillmentCarrierName { get; set; }
@@ -161,10 +161,10 @@ public class Package
     public class TrackingInfo
     {
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [JsonPropertyName("ctime")]
-        public int Ctime { get; set; }
+        public long Ctime { get; set; }
 
         [JsonPropertyName("description")]
         public string Description { get; set; }
@@ -173,6 +173,6 @@ public class Package
         public int Flag { get; set; }
 
         [JsonPropertyName("logid")]
-        public int Logid { get; set; }
+        public long Logid { get; set; }
     }
 }

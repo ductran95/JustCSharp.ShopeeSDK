@@ -81,13 +81,13 @@ public class PackageData
     public string RegionId { get; set; }
 
     [JsonPropertyName("ship_by_date")]
-    public int ShipByDate { get; set; }
+    public long ShipByDate { get; set; }
 
     [JsonPropertyName("shipping_confirm_time")]
-    public int ShippingConfirmTime { get; set; }
+    public long ShippingConfirmTime { get; set; }
 
     [JsonPropertyName("shop_id")]
-    public int ShopId { get; set; }
+    public long ShopId { get; set; }
 
     [JsonPropertyName("split_up")]
     public int SplitUp { get; set; }
@@ -105,7 +105,7 @@ public class PackageData
     public int FulfillmentShippingMethod { get; set; }
 
     [JsonPropertyName("fulfillment_channel_id")]
-    public int FulfillmentChannelId { get; set; }
+    public long FulfillmentChannelId { get; set; }
 
     [JsonPropertyName("preferred_delivery_timeslot")]
     public object PreferredDeliveryTimeslot { get; set; }
@@ -135,7 +135,7 @@ public class PackageData
     public object PrescriptionImages { get; set; }
 
     [JsonPropertyName("acl1_arrange_ship_date")]
-    public int Acl1ArrangeShipDate { get; set; }
+    public long Acl1ArrangeShipDate { get; set; }
 
     [JsonPropertyName("acl2_ack_date_3pl")]
     public int Acl2AckDate3pl { get; set; }
@@ -144,7 +144,7 @@ public class PackageData
     public int? PreAuthorizationStatus { get; set; }
 
     [JsonPropertyName("order_create_time")]
-    public int OrderCreateTime { get; set; }
+    public long OrderCreateTime { get; set; }
 
     [JsonPropertyName("btn_info_list")]
     public object BtnInfoList { get; set; }
@@ -173,10 +173,10 @@ public class PackageData
         public int Amount { get; set; }
 
         [JsonPropertyName("virtual_item_id")]
-        public int VirtualItemId { get; set; }
+        public long VirtualItemId { get; set; }
 
         [JsonPropertyName("virtual_model_id")]
-        public int VirtualModelId { get; set; }
+        public long VirtualModelId { get; set; }
 
         [JsonPropertyName("is_prescription_item")]
         public bool IsPrescriptionItem { get; set; }

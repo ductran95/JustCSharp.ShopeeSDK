@@ -45,10 +45,10 @@ public class IncomeTransactionHistoryDetail
     public long  RebatePrice { get; set; }
 
     [JsonPropertyName("release_time")]
-    public int ReleaseTime { get; set; }
+    public long ReleaseTime { get; set; }
 
     [JsonPropertyName("seller_absorbed_discount")]
-    public int SellerAbsorbedDiscount { get; set; }
+    public long SellerAbsorbedDiscount { get; set; }
 
     [JsonPropertyName("shipping_carrier")]
     public string ShippingCarrier { get; set; }
@@ -104,7 +104,7 @@ public class IncomeTransactionHistoryDetail
         public int ShopeeVoucher { get; set; }
 
         [JsonPropertyName("total_buyer_amount_rate")]
-        public int TotalBuyerAmountRate { get; set; }
+        public decimal TotalBuyerAmountRate { get; set; }
     }
 
     public class FeesAndCharges
@@ -197,13 +197,13 @@ public class IncomeTransactionHistoryDetail
     public class OrderLog
     {
         [JsonPropertyName("ctime")]
-        public int Ctime { get; set; }
+        public long Ctime { get; set; }
 
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [JsonPropertyName("mtime")]
-        public int Mtime { get; set; }
+        public long Mtime { get; set; }
 
         [JsonPropertyName("new_status")]
         public int NewStatus { get; set; }
@@ -212,10 +212,10 @@ public class IncomeTransactionHistoryDetail
         public int OldStatus { get; set; }
 
         [JsonPropertyName("release_time")]
-        public int ReleaseTime { get; set; }
+        public long ReleaseTime { get; set; }
 
         [JsonPropertyName("shop_id")]
-        public int ShopId { get; set; }
+        public long ShopId { get; set; }
     }
 
     public class TransactionPaymentInfo
@@ -272,7 +272,7 @@ public class IncomeTransactionHistoryDetail
         public string RuleDisplayName { get; set; }
 
         [JsonPropertyName("rule_id")]
-        public int RuleId { get; set; }
+        public long RuleId { get; set; }
 
         [JsonPropertyName("transifykey")]
         public string Transifykey { get; set; }

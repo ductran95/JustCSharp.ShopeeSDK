@@ -63,7 +63,7 @@ public class ShipmentOrderData
     public int PickupAttempts { get; set; }
 
     [JsonPropertyName("pickup_cutoff_time")]
-    public int PickupCutoffTime { get; set; }
+    public long PickupCutoffTime { get; set; }
 
     [JsonPropertyName("seller_address")]
     public ShipmentSellerAddress SellerAddress { get; set; }
@@ -72,7 +72,7 @@ public class ShipmentOrderData
     public int SellerAddressId { get; set; }
 
     [JsonPropertyName("seller_due_date")]
-    public int SellerDueDate { get; set; }
+    public long SellerDueDate { get; set; }
 
     [JsonPropertyName("shipping_proof")]
     public string ShippingProof { get; set; }
@@ -146,7 +146,7 @@ public class ShipmentOrderData
         public int Mcount { get; set; }
 
         [JsonPropertyName("mcount_create_time")]
-        public int McountCreateTime { get; set; }
+        public long McountCreateTime { get; set; }
 
         [JsonPropertyName("in_white_list")]
         public bool InWhiteList { get; set; }
@@ -161,7 +161,7 @@ public class ShipmentOrderData
         public int HideLikes { get; set; }
 
         [JsonPropertyName("user_id")]
-        public int UserId { get; set; }
+        public long UserId { get; set; }
 
         [JsonPropertyName("user_name")]
         public string UserName { get; set; }
@@ -194,7 +194,7 @@ public class ShipmentOrderData
         public decimal RatingStar { get; set; }
 
         [JsonPropertyName("shop_id")]
-        public int ShopId { get; set; }
+        public long ShopId { get; set; }
 
         [JsonPropertyName("followed")]
         public bool Followed { get; set; }
@@ -236,16 +236,16 @@ public class ShipmentOrderData
         public bool FeedPrivate { get; set; }
 
         [JsonPropertyName("delivery_address_id")]
-        public int DeliveryAddressId { get; set; }
+        public long DeliveryAddressId { get; set; }
 
         [JsonPropertyName("birth_timestamp")]
-        public int BirthTimestamp { get; set; }
+        public long BirthTimestamp { get; set; }
 
         [JsonPropertyName("holiday_mode_on")]
         public bool HolidayModeOn { get; set; }
 
         [JsonPropertyName("tos_accepted_time")]
-        public int TosAcceptedTime { get; set; }
+        public long TosAcceptedTime { get; set; }
 
         [JsonPropertyName("address_info")]
         public AddressInfo AddressInfo { get; set; }
@@ -284,10 +284,10 @@ public class ShipmentOrderData
         public int Sold { get; set; }
 
         [JsonPropertyName("ctime")]
-        public int Ctime { get; set; }
+        public long Ctime { get; set; }
 
         [JsonPropertyName("mtime")]
-        public int Mtime { get; set; }
+        public long Mtime { get; set; }
 
         [JsonPropertyName("sku")]
         public string Sku { get; set; }
@@ -296,13 +296,13 @@ public class ShipmentOrderData
     public class OrderItem
     {
         [JsonPropertyName("add_on_deal_id")]
-        public int AddOnDealId { get; set; }
+        public long AddOnDealId { get; set; }
 
         [JsonPropertyName("amount")]
         public int Amount { get; set; }
 
         [JsonPropertyName("bundle_deal_id")]
-        public int BundleDealId { get; set; }
+        public long BundleDealId { get; set; }
 
         [JsonPropertyName("group_id")]
         public string GroupId { get; set; }
@@ -341,7 +341,7 @@ public class ShipmentOrderData
         public int Status { get; set; }
 
         [JsonPropertyName("shop_id")]
-        public int ShopId { get; set; }
+        public long ShopId { get; set; }
 
         [JsonPropertyName("show_rr_tag")]
         public bool ShowRrTag { get; set; }
@@ -356,7 +356,7 @@ public class ShipmentOrderData
         public int CancellationTagQty { get; set; }
 
         [JsonPropertyName("order_item_id")]
-        public int OrderItemId { get; set; }
+        public long OrderItemId { get; set; }
 
         [JsonPropertyName("is_virtual_sku")]
         public bool IsVirtualSku { get; set; }
@@ -404,7 +404,7 @@ public class ShipmentOrderData
         public string Brand { get; set; }
 
         [JsonPropertyName("cat_id")]
-        public int CatId { get; set; }
+        public long CatId { get; set; }
 
         [JsonPropertyName("cmt_count")]
         public int CmtCount { get; set; }
@@ -413,7 +413,7 @@ public class ShipmentOrderData
         public int Condition { get; set; }
 
         [JsonPropertyName("ctime")]
-        public int Ctime { get; set; }
+        public long Ctime { get; set; }
 
         [JsonPropertyName("currency")]
         public string Currency { get; set; }
@@ -446,7 +446,7 @@ public class ShipmentOrderData
         public string PriceBeforeDiscount { get; set; }
 
         [JsonPropertyName("shop_id")]
-        public int ShopId { get; set; }
+        public long ShopId { get; set; }
 
         [JsonPropertyName("sold")]
         public int Sold { get; set; }
@@ -464,10 +464,10 @@ public class ShipmentOrderData
     public class ShipmentSellerAddress
     {
         [JsonPropertyName("address_id")]
-        public int AddressId { get; set; }
+        public long AddressId { get; set; }
 
         [JsonPropertyName("user_id")]
-        public int UserId { get; set; }
+        public long UserId { get; set; }
 
         [JsonPropertyName("name")]
         public string Name { get; set; }
@@ -491,16 +491,16 @@ public class ShipmentOrderData
         public int Status { get; set; }
 
         [JsonPropertyName("ctime")]
-        public int Ctime { get; set; }
+        public long Ctime { get; set; }
 
         [JsonPropertyName("mtime")]
-        public int Mtime { get; set; }
+        public long Mtime { get; set; }
 
         [JsonPropertyName("zip_code")]
         public string ZipCode { get; set; }
 
         [JsonPropertyName("def_time")]
-        public int DefTime { get; set; }
+        public long DefTime { get; set; }
 
         [JsonPropertyName("full_address")]
         public string FullAddress { get; set; }

@@ -110,7 +110,7 @@ public class FinanceOrder
         public int Status { get; set; }
 
         [JsonPropertyName("bundle_deal_id")]
-        public int BundleDealId { get; set; }
+        public long BundleDealId { get; set; }
 
         [JsonPropertyName("product")]
         public Product Product { get; set; }
@@ -119,7 +119,7 @@ public class FinanceOrder
         public List<object> ItemList { get; set; }
 
         [JsonPropertyName("campaign_fee_rate")]
-        public int CampaignFeeRate { get; set; }
+        public decimal CampaignFeeRate { get; set; }
 
         [JsonPropertyName("show_cancellation_tag")]
         public bool ShowCancellationTag { get; set; }
@@ -143,7 +143,7 @@ public class FinanceOrder
         public object BundleDeal { get; set; }
 
         [JsonPropertyName("amount")]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         [JsonPropertyName("order_price")]
         public string OrderPrice { get; set; }
