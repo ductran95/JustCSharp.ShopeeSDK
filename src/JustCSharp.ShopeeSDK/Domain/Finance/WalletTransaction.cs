@@ -9,7 +9,7 @@ public class WalletTransaction
     public string Comment { get; set; }
 
     [JsonPropertyName("withdrawal_split_length")]
-    public long  WithdrawalSplitLength { get; set; }
+    public long WithdrawalSplitLength { get; set; }
 
     [JsonPropertyName("orders")]
     public List<object> Orders { get; set; }
@@ -24,7 +24,7 @@ public class WalletTransaction
     public string FastEscrowGroupId { get; set; }
 
     [JsonPropertyName("trans_fee")]
-    public long  TransFee { get; set; }
+    public decimal TransFee { get; set; }
 
     [JsonPropertyName("type")]
     public int Type { get; set; }
@@ -33,7 +33,7 @@ public class WalletTransaction
     public string RefundSn { get; set; }
 
     [JsonPropertyName("bank_account_id")]
-    public long  BankAccountId { get; set; }
+    public long BankAccountId { get; set; }
 
     [JsonPropertyName("validation_month")]
     public object ValidationMonth { get; set; }
@@ -111,7 +111,7 @@ public class WalletTransaction
     public string BankAccountNumber { get; set; }
 
     [JsonPropertyName("ctime")]
-    public int Ctime { get; set; }
+    public long Ctime { get; set; }
 
     [JsonPropertyName("withdrawal_target_type")]
     public int WithdrawalTargetType { get; set; }
