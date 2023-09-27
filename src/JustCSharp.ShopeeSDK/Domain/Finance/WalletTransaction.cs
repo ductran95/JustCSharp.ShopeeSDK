@@ -42,7 +42,7 @@ public class WalletTransaction
     public int WithdrawalType { get; set; }
 
     [JsonPropertyName("admin_fee")]
-    public int AdminFee { get; set; }
+    public decimal AdminFee { get; set; }
 
     [JsonPropertyName("brand_validation_id")]
     public long BrandValidationId { get; set; }
@@ -51,13 +51,13 @@ public class WalletTransaction
     public long UserId { get; set; }
 
     [JsonPropertyName("paid_amount")]
-    public int PaidAmount { get; set; }
+    public decimal PaidAmount { get; set; }
 
     [JsonPropertyName("fast_escrow_repayment_id")]
     public string FastEscrowRepaymentId { get; set; }
 
     [JsonPropertyName("withdrawal_total_amount")]
-    public int WithdrawalTotalAmount { get; set; }
+    public decimal WithdrawalTotalAmount { get; set; }
 
     [JsonPropertyName("source")]
     public int Source { get; set; }
@@ -117,13 +117,13 @@ public class WalletTransaction
     public int WithdrawalTargetType { get; set; }
 
     [JsonPropertyName("current_balance")]
-    public int CurrentBalance { get; set; }
+    public decimal CurrentBalance { get; set; }
 
     [JsonPropertyName("complete_time")]
     public long CompleteTime { get; set; }
 
     [JsonPropertyName("amount")]
-    public int Amount { get; set; }
+    public decimal Amount { get; set; }
 
     [JsonPropertyName("fast_escrow_order_id")]
     public string FastEscrowOrderId { get; set; }
