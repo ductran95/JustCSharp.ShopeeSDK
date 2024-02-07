@@ -10,10 +10,6 @@ public class ShopeeException : Exception
     {
     }
 
-    protected ShopeeException(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
-
     public ShopeeException(string message) : base(message)
     {
     }

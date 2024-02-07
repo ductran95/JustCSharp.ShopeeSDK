@@ -9,10 +9,6 @@ public class ShopeeUnauthorizedException : ShopeeException
     {
     }
 
-    protected ShopeeUnauthorizedException(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
-
     public ShopeeUnauthorizedException(string message) : base(message)
     {
     }
