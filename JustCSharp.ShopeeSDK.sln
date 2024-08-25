@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustCSharp.ShopeeSDK", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustCSharp.ShopeeSDK.IntegrationTest", "test\JustCSharp.ShopeeSDK.IntegrationTest\JustCSharp.ShopeeSDK.IntegrationTest.csproj", "{BB87548D-53BA-42D3-AFF2-C3CF9635FF34}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0A999505-FD3A-4AB3-9E46-BF957385E377}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E25511D0-9996-4133-8B8A-A9E13FD322B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,9 @@ Global
 		{BB87548D-53BA-42D3-AFF2-C3CF9635FF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB87548D-53BA-42D3-AFF2-C3CF9635FF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB87548D-53BA-42D3-AFF2-C3CF9635FF34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49551EF8-1DC9-42AF-9ED6-9B892C4EDF92} = {0A999505-FD3A-4AB3-9E46-BF957385E377}
+		{BB87548D-53BA-42D3-AFF2-C3CF9635FF34} = {E25511D0-9996-4133-8B8A-A9E13FD322B6}
 	EndGlobalSection
 EndGlobal
