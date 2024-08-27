@@ -45,14 +45,14 @@ public class ShopeeClient : IShopeeClient, IDisposable
         }
         catch (Exception ex)
         {
-            throw new ShopeeException("Failed to send request", ex);
+            throw new ShopeeException("Failed to send request", ex, restRequest, response);
         }
         finally
         {
             _logger.LogTrace("End ExecuteAsync");
         }
 
-        return ProcessResponse(response);
+        return ProcessResponse(restRequest, response);
     }
 
     public async Task<T> ExecuteAsync<T>(IShopeeRequest<T> request, CancellationToken cancellationToken = default)
@@ -69,14 +69,14 @@ public class ShopeeClient : IShopeeClient, IDisposable
         }
         catch (Exception ex)
         {
-            throw new ShopeeException("Failed to send request", ex);
+            throw new ShopeeException("Failed to send request", ex, restRequest, response);
         }
         finally
         {
             _logger.LogTrace("End ExecuteAsync");
         }
 
-        return ProcessResponse(response);
+        return ProcessResponse(restRequest, response);
     }
 
     public string GetPasswordHash([NotNull] string password)
@@ -85,7 +85,7 @@ public class ShopeeClient : IShopeeClient, IDisposable
             HashAlgorithmType.SHA256).ToLower();
     }
 
-    protected T ProcessResponse<T>(RestResponse<T> response)
+    protected T ProcessResponse<T>(RestRequest request, RestResponse<T> response)
     {
         if (response.IsSuccessful) return response.Data;
 
@@ -93,7 +93,8 @@ public class ShopeeClient : IShopeeClient, IDisposable
             throw new ShopeeUnauthorizedException("Cookie is not set or expired", response.ErrorException);
         throw new ShopeeException(
             $"Request failed, status code: {response.StatusCode}, message: {response.ErrorMessage}",
-            response.ErrorException);
+            response.ErrorException,
+            request, response);
     }
 
     protected RestRequest CreateRestRequest<T>(IShopeeRequest<T> request) where T : IShopeeResponse
@@ -127,7 +128,7 @@ public class ShopeeClient : IShopeeClient, IDisposable
         var cookies = ParseCookieData(request.Cookie);
 
         if (!cookies.TryGetValue(ShopeeParameters.ShopIdParameter, out var shopId))
-            throw new ShopeeUnauthorizedException($"Cookies not contains {ShopeeParameters.ShopIdParameter}");
+            throw new ShopeeUnauthorizedException($"Cookies not contains {ShopeeParameters.ShopIdParameter}", restRequest);
 
         restRequest.AddParameter(ShopeeParameters.ShopIdParameter, shopId, ParameterType.QueryString);
         restRequest.AddParameter(ShopeeParameters.ShopVersionParameter, request.ShopVersion, ParameterType.QueryString);
