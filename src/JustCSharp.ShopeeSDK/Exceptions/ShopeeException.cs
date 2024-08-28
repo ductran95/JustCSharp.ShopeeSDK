@@ -15,18 +15,21 @@ public class ShopeeException : Exception
     {
         Request = request;
         Response = response;
+        AppendRequestData();
     }
 
     public ShopeeException(string message, RestRequest request = null, RestResponse response = null) : base(message)
     {
         Request = request;
         Response = response;
+        AppendRequestData();
     }
 
     public ShopeeException(string message, Exception innerException, RestRequest request = null, RestResponse response = null) : base(message, innerException)
     {
         Request = request;
         Response = response;
+        AppendRequestData();
     }
 
     protected void AppendRequestData()
