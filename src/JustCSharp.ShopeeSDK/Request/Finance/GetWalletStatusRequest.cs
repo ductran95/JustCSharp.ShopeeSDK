@@ -8,12 +8,13 @@ namespace JustCSharp.ShopeeSDK.Request.Finance;
 public class GetWalletStatusRequest : ShopeeRequestBase<GetWalletStatusResponse>
 {
     public override string ApiUrl => "finance/get_wallet_status";
+    public override int? ApiVersion => 4;
 
     public override Method Method => Method.Get;
 
     [JsonIgnore]
-    [QueryPropertyName("wallet_type")]
-    public int WalletType { get; set; }
+    [QueryPropertyName("wallet_provider")]
+    public int WalletProvider { get; set; }
 
     [JsonIgnore]
     [QueryPropertyName("bank_account_id")]

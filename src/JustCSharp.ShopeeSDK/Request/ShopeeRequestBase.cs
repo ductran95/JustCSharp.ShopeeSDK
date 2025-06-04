@@ -13,7 +13,7 @@ public abstract class ShopeeRequestBase<T> : IShopeeRequest<T> where T : IShopee
 
     [JsonIgnore]
     [QueryIgnore]
-    public virtual int? ApiVersion { get; } = 3;
+    public virtual int? ApiVersion { get; } = 4;
 
     [JsonIgnore]
     [QueryIgnore]
