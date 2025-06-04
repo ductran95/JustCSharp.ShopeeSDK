@@ -19,8 +19,8 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
-        <PackageReference Include="MinVer" Version="5.0.0" PrivateAssets="All"/>
-        <PackageReference Include="JetBrains.Annotations" Version="2024.2.0" PrivateAssets="All"/>
+        <PackageReference Include="MinVer" Version="6.0.0" PrivateAssets="All"/>
+        <PackageReference Include="JetBrains.Annotations" Version="2024.3.0" PrivateAssets="All"/>
     </ItemGroup>
 
     <PropertyGroup>
