@@ -71,12 +71,12 @@ public class SearchOrderIdListRequest : ShopeeRequestBase<SearchOrderIdListRespo
 
         [JsonPropertyName("is_drop_off")]
         public int IsDropOff { get; set; }
-        
-        [JsonPropertyName("prescription_filter")]
-        public int PrescriptionFilter { get; set; }
 
         [JsonPropertyName("fulfillment_source")]
         public int FulfillmentSource { get; set; }
+
+        [JsonPropertyName("action_filter")]
+        public int ActionFilter { get; set; }
         
         public static class FulfillmentTypes
         {

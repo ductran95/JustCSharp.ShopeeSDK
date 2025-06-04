@@ -16,6 +16,9 @@ public class OrderIdListResponse
     [JsonPropertyName("pagination")]
     public PaginationResponse Pagination { get; set; }
     
+    [JsonPropertyName("search_notice_info")]
+    public SearchNoticeInfoResponse SearchNoticeInfo { get; set; }
+    
     public class IndexListResponse
     {
         [JsonPropertyName("order_id")]
@@ -44,5 +47,23 @@ public class OrderIdListResponse
 
         [JsonPropertyName("previous_page_sentinel")]
         public string PreviousPageSentinel { get; set; }
+    }
+    
+    public class SearchNoticeInfoResponse
+    {
+        [JsonPropertyName("search_notice_value")]
+        public string SearchNoticeValue { get; set; }
+
+        [JsonPropertyName("search_notice_timestamp_list")]
+        public List<SearchNoticeTimestampResponse> SearchNoticeTimestampList { get; set; }
+    }
+
+    public class SearchNoticeTimestampResponse
+    {
+        [JsonPropertyName("timestamp")]
+        public int Timestamp { get; set; }
+
+        [JsonPropertyName("placeholder")]
+        public string Placeholder { get; set; }
     }
 }

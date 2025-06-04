@@ -6,13 +6,16 @@ namespace JustCSharp.ShopeeSDK.Domain.Order;
 public class Order
 {
     [JsonPropertyName("shop_id")]
-    public long  ShopId { get; set; }
+    public long ShopId { get; set; }
 
     [JsonPropertyName("order_id")]
     public long OrderId { get; set; }
 
     [JsonPropertyName("order_sn")]
     public string OrderSn { get; set; }
+
+    [JsonPropertyName("advance_booking_sn")]
+    public string AdvanceBookingSn { get; set; }
 
     [JsonPropertyName("order_unit_migration_toggle")]
     public int OrderUnitMigrationToggle { get; set; }
@@ -44,11 +47,14 @@ public class Order
     [JsonPropertyName("status")]
     public int Status { get; set; }
 
+    [JsonPropertyName("status_info")]
+    public StatusInfo StatusInfo { get; set; }
+
     [JsonPropertyName("create_time")]
-    public long  CreateTime { get; set; }
+    public long CreateTime { get; set; }
 
     [JsonPropertyName("complete_time")]
-    public long  CompleteTime { get; set; }
+    public long CompleteTime { get; set; }
 
     [JsonPropertyName("status_ext")]
     public int StatusExt { get; set; }
@@ -182,6 +188,9 @@ public class Order
     [JsonPropertyName("return_id")]
     public long ReturnId { get; set; }
 
+    [JsonPropertyName("return_request_due_date")]
+    public long? ReturnRequestDueDate { get; set; }
+
     [JsonPropertyName("order_ratable")]
     public bool OrderRatable { get; set; }
 
@@ -228,7 +237,7 @@ public class Order
     public object PreAuthorizationStatus { get; set; }
 
     [JsonPropertyName("prescription_check_status")]
-    public object PrescriptionCheckStatus { get; set; }
+    public int? PrescriptionCheckStatus { get; set; }
 
     [JsonPropertyName("prescription_images")]
     public object PrescriptionImages { get; set; }
@@ -239,219 +248,268 @@ public class Order
     [JsonPropertyName("prescription_reject_reason")]
     public object PrescriptionRejectReason { get; set; }
 
-    public class OrderBuyerUser
-    {
-        [JsonPropertyName("delivery_succ_count")]
-        public int DeliverySuccCount { get; set; }
+    [JsonPropertyName("delivery_address_component")]
+    public OrderDeliveryAddressComponent DeliveryAddressComponent { get; set; }
 
-        [JsonPropertyName("user_id")]
-        public long UserId { get; set; }
+    [JsonPropertyName("description_timestamp_format_enum")]
+    public int DescriptionTimestampFormatEnum { get; set; }
 
-        [JsonPropertyName("user_name")]
-        public string UserName { get; set; }
+    [JsonPropertyName("receivable")]
+    public object Receivable { get; set; }
 
-        [JsonPropertyName("portrait")]
-        public string Portrait { get; set; }
+    [JsonPropertyName("order_ext_info")]
+    public OrderExtInfo OrderExtInfo { get; set; }
+}
 
-        [JsonPropertyName("delivery_order_count")]
-        public int DeliveryOrderCount { get; set; }
+public class OrderBuyerUser
+{
+    [JsonPropertyName("user_id")]
+    public long UserId { get; set; }
 
-        [JsonPropertyName("rating_count")]
-        public List<int> RatingCount { get; set; }
+    [JsonPropertyName("user_name")]
+    public string UserName { get; set; }
 
-        [JsonPropertyName("rating_star")]
-        public decimal RatingStar { get; set; }
+    [JsonPropertyName("portrait")]
+    public string Portrait { get; set; }
 
-        [JsonPropertyName("shop_id")]
-        public long ShopId { get; set; }
+    [JsonPropertyName("delivery_succ_count")]
+    public int? DeliverySuccCount { get; set; }
 
-        [JsonPropertyName("followed")]
-        public bool Followed { get; set; }
-    }
+    [JsonPropertyName("delivery_order_count")]
+    public int? DeliveryOrderCount { get; set; }
 
-    public class OrderDropshippingInfo
-    {
-        [JsonPropertyName("enabled")]
-        public int Enabled { get; set; }
+    [JsonPropertyName("delivery_succ_percentage")]
+    public decimal? DeliverySuccPercentage { get; set; }
 
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
+    [JsonPropertyName("rating_count")]
+    public List<int> RatingCount { get; set; }
 
-        [JsonPropertyName("phone_number")]
-        public string PhoneNumber { get; set; }
-    }
+    [JsonPropertyName("rating_star")]
+    public decimal RatingStar { get; set; }
 
-    public class ItemModel
-    {
-        [JsonPropertyName("model_id")]
-        public long? ModelId { get; set; }
+    [JsonPropertyName("shop_id")]
+    public long ShopId { get; set; }
 
-        [JsonPropertyName("item_id")]
-        public long? ItemId { get; set; }
+    [JsonPropertyName("followed")]
+    public bool Followed { get; set; }
 
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
+    [JsonPropertyName("hide_chat_button")]
+    public bool HideChatButton { get; set; }
 
-        [JsonPropertyName("status")]
-        public int Status { get; set; }
+    [JsonPropertyName("hide_buyer_user_component")]
+    public bool HideBuyerUserComponent { get; set; }
+}
 
-        [JsonPropertyName("sku")]
-        public string Sku { get; set; }
+public class OrderDeliveryAddressComponent
+{
+    [JsonPropertyName("buyer_contact_info_popup")]
+    public object BuyerContactInfoPopup { get; set; }
 
-        [JsonPropertyName("weight")]
-        public int Weight { get; set; }
-    }
+    [JsonPropertyName("buyer_contact_info_button")]
+    public object BuyerContactInfoButton { get; set; }
+}
 
-    public class OrderItem
-    {
-        [JsonPropertyName("add_on_deal_id")]
-        public long AddOnDealId { get; set; }
+public class OrderDropshippingInfo
+{
+    [JsonPropertyName("enabled")]
+    public int Enabled { get; set; }
 
-        [JsonPropertyName("amount")]
-        public int Amount { get; set; }
+    [JsonPropertyName("name")]
+    public string Name { get; set; }
 
-        [JsonPropertyName("bundle_deal")]
-        public object BundleDeal { get; set; }
+    [JsonPropertyName("phone_number")]
+    public string PhoneNumber { get; set; }
+}
 
-        [JsonPropertyName("bundle_deal_id")]
-        public int BundleDealId { get; set; }
+public class ItemModel
+{
+    [JsonPropertyName("model_id")]
+    public long? ModelId { get; set; }
 
-        [JsonPropertyName("bundle_deal_model")]
-        public List<object> BundleDealModel { get; set; }
+    [JsonPropertyName("item_id")]
+    public long ItemId { get; set; }
 
-        [JsonPropertyName("bundle_deal_product")]
-        public List<object> BundleDealProduct { get; set; }
+    [JsonPropertyName("name")]
+    public string Name { get; set; }
 
-        [JsonPropertyName("group_id")]
-        public string GroupId { get; set; }
+    [JsonPropertyName("status")]
+    public int Status { get; set; }
 
-        [JsonPropertyName("is_add_on_sub_item")]
-        public bool IsAddOnSubItem { get; set; }
+    [JsonPropertyName("sku")]
+    public string Sku { get; set; }
 
-        [JsonPropertyName("is_prescription_item")]
-        public bool IsPrescriptionItem { get; set; }
+    [JsonPropertyName("weight")]
+    public int Weight { get; set; }
+}
 
-        [JsonPropertyName("is_virtual_sku")]
-        public bool IsVirtualSku { get; set; }
+public class OrderExtInfo
+{
+}
 
-        [JsonPropertyName("is_wholesale")]
-        public bool IsWholesale { get; set; }
+public class OrderItem
+{
+    [JsonPropertyName("add_on_deal_id")]
+    public long AddOnDealId { get; set; }
 
-        [JsonPropertyName("item_id")]
-        public long? ItemId { get; set; }
+    [JsonPropertyName("amount")]
+    public int Amount { get; set; }
 
-        [JsonPropertyName("item_list")]
-        public List<object> ItemList { get; set; }
+    [JsonPropertyName("bundle_deal")]
+    public object BundleDeal { get; set; }
 
-        [JsonPropertyName("item_model")]
-        public ItemModel ItemModel { get; set; }
+    [JsonPropertyName("bundle_deal_id")]
+    public int BundleDealId { get; set; }
 
-        [JsonPropertyName("index")]
-        public int Index { get; set; }
+    [JsonPropertyName("bundle_deal_model")]
+    public List<object> BundleDealModel { get; set; }
 
-        [JsonPropertyName("line_item_id")]
-        public string LineItemId { get; set; }
+    [JsonPropertyName("bundle_deal_product")]
+    public List<object> BundleDealProduct { get; set; }
 
-        [JsonPropertyName("model_id")]
-        public long? ModelId { get; set; }
+    [JsonPropertyName("group_id")]
+    public string GroupId { get; set; }
 
-        [JsonPropertyName("order_price")]
-        public string OrderPrice { get; set; }
+    [JsonPropertyName("is_add_on_sub_item")]
+    public bool IsAddOnSubItem { get; set; }
 
-        [JsonPropertyName("product")]
-        public Product Product { get; set; }
+    [JsonPropertyName("is_prescription_item")]
+    public bool IsPrescriptionItem { get; set; }
 
-        [JsonPropertyName("status")]
-        public int Status { get; set; }
+    [JsonPropertyName("is_virtual_sku")]
+    public bool IsVirtualSku { get; set; }
 
-        [JsonPropertyName("sub_type")]
-        public int SubType { get; set; }
+    [JsonPropertyName("is_wholesale")]
+    public bool IsWholesale { get; set; }
 
-        [JsonPropertyName("show_rr_tag")]
-        public bool ShowRrTag { get; set; }
+    [JsonPropertyName("item_id")]
+    public long? ItemId { get; set; }
 
-        [JsonPropertyName("rr_tag_qty")]
-        public int RrTagQty { get; set; }
+    [JsonPropertyName("item_list")]
+    public List<object> ItemList { get; set; }
 
-        [JsonPropertyName("show_cancellation_tag")]
-        public bool ShowCancellationTag { get; set; }
+    [JsonPropertyName("item_model")]
+    public ItemModel ItemModel { get; set; }
 
-        [JsonPropertyName("cancellation_tag_qty")]
-        public int CancellationTagQty { get; set; }
-    }
+    [JsonPropertyName("index")]
+    public int Index { get; set; }
 
-    public class Product
-    {
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
+    [JsonPropertyName("line_item_id")]
+    public string LineItemId { get; set; }
 
-        [JsonPropertyName("images")]
-        public List<string> Images { get; set; }
+    [JsonPropertyName("model_id")]
+    public long? ModelId { get; set; }
 
-        [JsonPropertyName("is_pre_order")]
-        public bool IsPreOrder { get; set; }
+    [JsonPropertyName("order_price")]
+    public string OrderPrice { get; set; }
 
-        [JsonPropertyName("item_id")]
-        public long? ItemId { get; set; }
+    [JsonPropertyName("product")]
+    public Product Product { get; set; }
 
-        [JsonPropertyName("model_id")]
-        public long? ModelId { get; set; }
+    [JsonPropertyName("status")]
+    public int Status { get; set; }
 
-        [JsonPropertyName("status")]
-        public int Status { get; set; }
+    [JsonPropertyName("sub_type")]
+    public int SubType { get; set; }
 
-        [JsonPropertyName("sku")]
-        public string Sku { get; set; }
+    [JsonPropertyName("show_rr_tag")]
+    public bool ShowRrTag { get; set; }
 
-        [JsonPropertyName("weight")]
-        public int Weight { get; set; }
-    }
+    [JsonPropertyName("rr_tag_qty")]
+    public int RrTagQty { get; set; }
 
-    public class OrderSellerAddress
-    {
-        [JsonPropertyName("address_id")]
-        public long AddressId { get; set; }
+    [JsonPropertyName("show_cancellation_tag")]
+    public bool ShowCancellationTag { get; set; }
 
-        [JsonPropertyName("user_id")]
-        public long UserId { get; set; }
+    [JsonPropertyName("cancellation_tag_qty")]
+    public int CancellationTagQty { get; set; }
+}
 
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
+public class Product
+{
+    [JsonPropertyName("name")]
+    public string Name { get; set; }
 
-        [JsonPropertyName("phone")]
-        public string Phone { get; set; }
+    [JsonPropertyName("images")]
+    public List<string> Images { get; set; }
 
-        [JsonPropertyName("country")]
-        public string Country { get; set; }
+    [JsonPropertyName("is_pre_order")]
+    public bool IsPreOrder { get; set; }
 
-        [JsonPropertyName("state")]
-        public string State { get; set; }
+    [JsonPropertyName("item_id")]
+    public long? ItemId { get; set; }
 
-        [JsonPropertyName("city")]
-        public string City { get; set; }
+    [JsonPropertyName("model_id")]
+    public long? ModelId { get; set; }
 
-        [JsonPropertyName("address")]
-        public string Address { get; set; }
+    [JsonPropertyName("status")]
+    public int Status { get; set; }
 
-        [JsonPropertyName("status")]
-        public int Status { get; set; }
+    [JsonPropertyName("sku")]
+    public string Sku { get; set; }
 
-        [JsonPropertyName("zip_code")]
-        public string ZipCode { get; set; }
+    [JsonPropertyName("weight")]
+    public int Weight { get; set; }
+}
 
-        [JsonPropertyName("full_address")]
-        public string FullAddress { get; set; }
+public class OrderSellerAddress
+{
+    [JsonPropertyName("address_id")]
+    public long AddressId { get; set; }
 
-        [JsonPropertyName("district")]
-        public string District { get; set; }
+    [JsonPropertyName("user_id")]
+    public long UserId { get; set; }
 
-        [JsonPropertyName("town")]
-        public string Town { get; set; }
+    [JsonPropertyName("name")]
+    public string Name { get; set; }
 
-        [JsonPropertyName("logistics_status")]
-        public int LogisticsStatus { get; set; }
+    [JsonPropertyName("phone")]
+    public string Phone { get; set; }
 
-        [JsonPropertyName("icno")]
-        public string Icno { get; set; }
-    }
+    [JsonPropertyName("country")]
+    public string Country { get; set; }
+
+    [JsonPropertyName("state")]
+    public string State { get; set; }
+
+    [JsonPropertyName("city")]
+    public string City { get; set; }
+
+    [JsonPropertyName("address")]
+    public string Address { get; set; }
+
+    [JsonPropertyName("status")]
+    public int Status { get; set; }
+
+    [JsonPropertyName("zip_code")]
+    public string ZipCode { get; set; }
+
+    [JsonPropertyName("full_address")]
+    public string FullAddress { get; set; }
+
+    [JsonPropertyName("district")]
+    public string District { get; set; }
+
+    [JsonPropertyName("town")]
+    public string Town { get; set; }
+
+    [JsonPropertyName("logistics_status")]
+    public int LogisticsStatus { get; set; }
+
+    [JsonPropertyName("icno")]
+    public string Icno { get; set; }
+}
+
+public class StatusDescription
+{
+    [JsonPropertyName("description_value")]
+    public string DescriptionValue { get; set; }
+}
+
+public class StatusInfo
+{
+    [JsonPropertyName("status")]
+    public string Status { get; set; }
+
+    [JsonPropertyName("status_description")]
+    public StatusDescription StatusDescription { get; set; }
 }
