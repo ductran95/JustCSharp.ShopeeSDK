@@ -155,7 +155,7 @@ public class ShipmentOrderData
     public class ShipmentBuyerUser
     {
         [JsonPropertyName("delivery_succ_count")]
-        public int DeliverySuccCount { get; set; }
+        public int? DeliverySuccCount { get; set; }
 
         [JsonPropertyName("hide_likes")]
         public int HideLikes { get; set; }
