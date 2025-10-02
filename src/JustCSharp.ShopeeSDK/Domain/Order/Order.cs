@@ -174,7 +174,7 @@ public class Order
     public string BuyerAddressPhone { get; set; }
 
     [JsonPropertyName("cancellation_end_date")]
-    public long? CancellationEndDate { get; set; }
+    public string CancellationEndDate { get; set; }
 
     [JsonPropertyName("pay_by_credit_card")]
     public bool PayByCreditCard { get; set; }
